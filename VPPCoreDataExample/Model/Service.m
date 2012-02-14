@@ -29,19 +29,20 @@
 + (void) allQuotesCompletion:(void (^) (NSArray *data))block {
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     [q addOperationWithBlock:^{
-        NSManagedObjectContext *moc = [[[VPPCoreData sharedInstance] newManagedObjectContext] retain];
+        NSManagedObjectContext *moc = [[[VPPCoreData sharedInstance] createManagedObjectContext] retain];
         
         NSArray *quotes = [[VPPCoreData sharedInstance] allObjectsForEntity:@"Quote" orderedByAttribute:@"date" ascending:NO filteredBy:nil managedObjectContext:moc];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             block([[VPPCoreData sharedInstance] objectsWithExistingIDs:quotes]);
         }];
+        [moc release];
     }];
     [q release];
 }
 
 
-+ (Quote *) newQuoteWithText:(NSString *)text {
-    NSManagedObjectContext *moc = [[[VPPCoreData sharedInstance] newManagedObjectContext] retain];
++ (Quote *) createQuoteWithText:(NSString *)text {
+    NSManagedObjectContext *moc = [[[VPPCoreData sharedInstance] createManagedObjectContext] retain];
     Quote *q = [[VPPCoreData sharedInstance] getNewObjectForEntity:@"Quote" managedObjectContext:moc];
     
     q.quote = text;
@@ -49,6 +50,7 @@
     
     [[VPPCoreData sharedInstance] saveManagedObjectContext:moc error:NULL];
     [moc release];
+    
     return q;
 }
 

@@ -187,15 +187,17 @@
     return nil;
 }
 
-- (NSManagedObjectContext *) newManagedObjectContext {
-    NSManagedObjectContext *m;
+- (NSManagedObjectContext *) createManagedObjectContext {
+    NSManagedObjectContext *m = nil;
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
         m = [[NSManagedObjectContext alloc] init];
         [m setPersistentStoreCoordinator:coordinator];
+        
+        return [m autorelease];
     }
     
-    return [m autorelease];
+    return nil;
 }
 
 
@@ -417,7 +419,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
  */
 - (NSManagedObjectContext *)mainContext {
     if (!mainContext_) {
-        mainContext_ = [[self newManagedObjectContext] retain];
+        mainContext_ = [[self createManagedObjectContext] retain];
     }
     return mainContext_;
 }
@@ -547,7 +549,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
     
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     [q addOperationWithBlock:^{
-        id obj = [self getNewObjectForEntity:entityName managedObjectContext:[self newManagedObjectContext]];
+        id obj = [self getNewObjectForEntity:entityName managedObjectContext:[self createManagedObjectContext]];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             block([self objectWithExistingID:obj]);
@@ -562,7 +564,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
     
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     [q addOperationWithBlock:^{
-        id obj = [self findObjectFromEntity:entity withPredicate:predicate managedObjectContext:[self newManagedObjectContext]];
+        id obj = [self findObjectFromEntity:entity withPredicate:predicate managedObjectContext:[self createManagedObjectContext]];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             block([self objectWithExistingID:obj]);
@@ -579,7 +581,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
     
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     [q addOperationWithBlock:^{
-        NSArray *objIDs = [self allObjectsForEntity:entity orderedByAttribute:attributeOrNil ascending:ascending filteredBy:predicateOrNil managedObjectContext:[self newManagedObjectContext]];
+        NSArray *objIDs = [self allObjectsForEntity:entity orderedByAttribute:attributeOrNil ascending:ascending filteredBy:predicateOrNil managedObjectContext:[self createManagedObjectContext]];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             block([self objectsWithExistingIDs:objIDs]);
@@ -594,7 +596,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
     
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     [q addOperationWithBlock:^{
-        int count = [self countObjectsForEntity:entity filteredBy:predicateOrNil managedObjectContext:[self newManagedObjectContext]];
+        int count = [self countObjectsForEntity:entity filteredBy:predicateOrNil managedObjectContext:[self createManagedObjectContext]];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             block(count);
@@ -613,7 +615,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
     
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     [q addOperationWithBlock:^{
-        NSArray *objIDs = [self objectsForEntity:entity orderedByAttribute:attributeOrNil ascending:ascending filteredBy:predicateOrNil fetchLimit:fetchLimit offset:offset managedObjectContext:[self newManagedObjectContext]];
+        NSArray *objIDs = [self objectsForEntity:entity orderedByAttribute:attributeOrNil ascending:ascending filteredBy:predicateOrNil fetchLimit:fetchLimit offset:offset managedObjectContext:[self createManagedObjectContext]];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             block([self objectsWithExistingIDs:objIDs]);
@@ -632,7 +634,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
     
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     [q addOperationWithBlock:^{
-        NSArray *objs = [self objectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil fetchLimit:fetchLimit offset:offset managedObjectContext:[self newManagedObjectContext]];
+        NSArray *objs = [self objectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil fetchLimit:fetchLimit offset:offset managedObjectContext:[self createManagedObjectContext]];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             block([self objectsWithExistingIDs:objs]);
@@ -648,7 +650,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
     
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     [q addOperationWithBlock:^{
-        NSArray *objs = [self allObjectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil managedObjectContext:[self newManagedObjectContext]];
+        NSArray *objs = [self allObjectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil managedObjectContext:[self createManagedObjectContext]];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             block([self objectsWithExistingIDs:objs]);

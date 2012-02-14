@@ -352,8 +352,10 @@
 
 
 /** Creates and initializes a new managed object context, setting its persistent
- store coordinator. */
-- (NSManagedObjectContext *) newManagedObjectContext;
+ store coordinator. 
+ 
+ The returned instance is autoreleased. */
+- (NSManagedObjectContext *) createManagedObjectContext;
 
 /** Counts all objects for the given entity that match the given predicate using 
  the given managed object context. */

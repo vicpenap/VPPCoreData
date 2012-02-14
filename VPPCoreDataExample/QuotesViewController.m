@@ -77,7 +77,7 @@
             else {
                 text = [NSString stringWithFormat:@"%d is odd",i];
             }
-            Quote *q = [Service newQuoteWithText:text];
+            Quote *q = [Service createQuoteWithText:text];
             [arr addObject:q]; 
         }
         
