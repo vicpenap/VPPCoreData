@@ -13,6 +13,9 @@ XCode, build it and run it.
 For full documentation check out 
 http://vicpenap.github.com/VPPCoreData 
 
+Be aware that this library is under active development, so it may get changed 
+later and it may contain bugs.
+
 ## License 
 
 Copyright (c) 2012 Víctor Pena Placer ([@vicpenap](http://www.twitter.com/vicpenap))
