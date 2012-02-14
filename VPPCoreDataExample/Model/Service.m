@@ -17,18 +17,6 @@
     [[VPPCoreData sharedInstance] deleteAllObjectsFromEntity:@"Quote"];
 }
 
-+ (Quote *) newQuoteWithText:(NSString *)text {
-    NSManagedObjectContext *moc = [[[VPPCoreData sharedInstance] newManagedObjectContext] retain];
-    Quote *q = [[VPPCoreData sharedInstance] getNewObjectForEntity:@"Quote" managedObjectContext:moc];
-    
-    q.quote = text;
-    q.date = [NSDate date];
-    
-    [[VPPCoreData sharedInstance] saveManagedObjectContext:moc error:NULL];
-    [moc release];
-    return q;
-}
-
 // example of background operation
 + (void) findQuotesWithText:(NSString *)text completion:(void (^) (NSArray *data))block {
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"quote contains[cd] %@",text];
@@ -37,7 +25,7 @@
     }];
 }
 
-// example of given managed object context operation 
+// example of given managed object context operations
 + (void) allQuotesCompletion:(void (^) (NSArray *data))block {
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     [q addOperationWithBlock:^{
@@ -50,6 +38,20 @@
     }];
     [q release];
 }
+
+
++ (Quote *) newQuoteWithText:(NSString *)text {
+    NSManagedObjectContext *moc = [[[VPPCoreData sharedInstance] newManagedObjectContext] retain];
+    Quote *q = [[VPPCoreData sharedInstance] getNewObjectForEntity:@"Quote" managedObjectContext:moc];
+    
+    q.quote = text;
+    q.date = [NSDate date];
+    
+    [[VPPCoreData sharedInstance] saveManagedObjectContext:moc error:NULL];
+    [moc release];
+    return q;
+}
+
 
 
 @end
