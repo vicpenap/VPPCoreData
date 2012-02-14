@@ -187,8 +187,11 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     if (loading) {
         cell.textLabel.text = @"Loading...";
+        cell.detailTextLabel.text = nil;
         return cell;
     }
     Quote *q = [self.quotes objectAtIndex:indexPath.row];
