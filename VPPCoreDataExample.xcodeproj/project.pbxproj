@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		57816AAB14EA5A3400DD1052 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57816AAA14EA5A3400DD1052 /* CoreData.framework */; };
+		57816AB314EA7F0600DD1052 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57816AB114EA7F0600DD1052 /* Model.xcdatamodeld */; };
+		57816AB614EA7F3D00DD1052 /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 57816AB514EA7F3D00DD1052 /* Quote.m */; };
+		57816AB914EA7F5C00DD1052 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 57816AB814EA7F5C00DD1052 /* Service.m */; };
+		57816ABC14EA815200DD1052 /* QuotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57816ABB14EA815200DD1052 /* QuotesViewController.m */; };
 		57F4A1D814EA586A0048D821 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F4A1D714EA586A0048D821 /* UIKit.framework */; };
 		57F4A1DA14EA586A0048D821 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F4A1D914EA586A0048D821 /* Foundation.framework */; };
 		57F4A1DC14EA586A0048D821 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F4A1DB14EA586A0048D821 /* CoreGraphics.framework */; };
@@ -19,6 +23,13 @@
 
 /* Begin PBXFileReference section */
 		57816AAA14EA5A3400DD1052 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		57816AB214EA7F0600DD1052 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		57816AB414EA7F3D00DD1052 /* Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quote.h; sourceTree = "<group>"; };
+		57816AB514EA7F3D00DD1052 /* Quote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quote.m; sourceTree = "<group>"; };
+		57816AB714EA7F5C00DD1052 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		57816AB814EA7F5C00DD1052 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		57816ABA14EA815200DD1052 /* QuotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuotesViewController.h; sourceTree = "<group>"; };
+		57816ABB14EA815200DD1052 /* QuotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuotesViewController.m; sourceTree = "<group>"; };
 		57F4A1D314EA586A0048D821 /* VPPCoreDataExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPPCoreDataExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F4A1D714EA586A0048D821 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		57F4A1D914EA586A0048D821 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,6 +60,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57816AB014EA7F0600DD1052 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57816AB114EA7F0600DD1052 /* Model.xcdatamodeld */,
+				57816AB414EA7F3D00DD1052 /* Quote.h */,
+				57816AB514EA7F3D00DD1052 /* Quote.m */,
+				57816AB714EA7F5C00DD1052 /* Service.h */,
+				57816AB814EA7F5C00DD1052 /* Service.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		57F4A1C814EA586A0048D821 = {
 			isa = PBXGroup;
 			children = (
@@ -80,10 +103,13 @@
 		57F4A1DD14EA586A0048D821 /* VPPCoreDataExample */ = {
 			isa = PBXGroup;
 			children = (
+				57816AB014EA7F0600DD1052 /* Model */,
 				57F4A1FC14EA59010048D821 /* Libraries */,
 				57F4A1E614EA586A0048D821 /* AppDelegate.h */,
 				57F4A1E714EA586A0048D821 /* AppDelegate.m */,
 				57F4A1DE14EA586A0048D821 /* Supporting Files */,
+				57816ABA14EA815200DD1052 /* QuotesViewController.h */,
+				57816ABB14EA815200DD1052 /* QuotesViewController.m */,
 			);
 			path = VPPCoreDataExample;
 			sourceTree = "<group>";
@@ -182,6 +208,10 @@
 				57F4A1E414EA586A0048D821 /* main.m in Sources */,
 				57F4A1E814EA586A0048D821 /* AppDelegate.m in Sources */,
 				57F4A1F514EA58AF0048D821 /* VPPCoreData.m in Sources */,
+				57816AB314EA7F0600DD1052 /* Model.xcdatamodeld in Sources */,
+				57816AB614EA7F3D00DD1052 /* Quote.m in Sources */,
+				57816AB914EA7F5C00DD1052 /* Service.m in Sources */,
+				57816ABC14EA815200DD1052 /* QuotesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +316,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		57816AB114EA7F0600DD1052 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				57816AB214EA7F0600DD1052 /* Model.xcdatamodel */,
+			);
+			currentVersion = 57816AB214EA7F0600DD1052 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 57F4A1CA14EA586A0048D821 /* Project object */;
 }

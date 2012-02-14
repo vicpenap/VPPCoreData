@@ -7,14 +7,16 @@
 //
 
 #import "AppDelegate.h"
-
+#import "QuotesViewController.h"
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize navigationController;
 
 - (void)dealloc
 {
     [_window release];
+    self.navigationController = nil;
     [super dealloc];
 }
 
@@ -23,6 +25,10 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    QuotesViewController *q = [[QuotesViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:q] autorelease];
+    [q release];
+    [self.window addSubview:self.navigationController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
