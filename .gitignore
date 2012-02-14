@@ -1,0 +1,6 @@
+.DS_Store
+VPPCoreDataExample.xcodeproj/xcuserdata/
+VPPCoreDataExample.xcodeproj/project.xcworkspace/xcuserdata/
+build/
+VPPCoreDataExample.xcodeproj/*.mode1v3
+VPPCoreDataExample.xcodeproj/*.pbxuser
