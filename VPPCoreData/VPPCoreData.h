@@ -84,7 +84,8 @@
  is automatically executed in main thread. 
     - If the invoked method is a fetch operation, all returned entities are automatically 
  re-fetched in foreground using their objectIDs, and these refetched entities
- are passed through the completion block.
+ are passed through the completion block. Take into account that re-fetching the
+ objects in main thread will block the UI if the amount of data is too big.
  
  - *Different managedObjectContext operations*: these methods can be called in 
  any thread. They will be performed in the that thread and the returned entities
@@ -96,8 +97,8 @@
  
  If you are modifying data in a thread different than the main one, when saving
  changes **only the managed object context associated with the main thread
- will be notified** of those changes. Is your responsibility to notify any other
- managed object context you could be using with the changes made.
+ will be notified** of those changes. Is your responsibility to notify the 
+ changes to any other managed object context you could be using.
  
  
  */
