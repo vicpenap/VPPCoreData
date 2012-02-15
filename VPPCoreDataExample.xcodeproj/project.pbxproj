@@ -132,9 +132,8 @@
 				57F4A1F314EA58AF0048D821 /* VPPCoreData.h */,
 				57F4A1F414EA58AF0048D821 /* VPPCoreData.m */,
 			);
-			name = VPPCoreData;
-			path = ../VPPCoreData;
-			sourceTree = "<group>";
+			path = VPPCoreData;
+			sourceTree = SOURCE_ROOT;
 		};
 		57F4A1FC14EA59010048D821 /* Libraries */ = {
 			isa = PBXGroup;
