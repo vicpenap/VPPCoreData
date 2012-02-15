@@ -1,4 +1,4 @@
-# VPPCoreData 
+# VPPCoreData v0.1.0
 
 VPPCoreData library simplifies the task of managing data with Core Data 
 framework. This library offers an automatic setup of Core Data and a set of
@@ -15,6 +15,10 @@ http://vicpenap.github.com/VPPCoreData
 
 Be aware that this library is under active development, so it may get changed 
 later and it may contain bugs.
+
+## Changelog
+
+- 2012/02/15 (v0.1.0): First release.
 
 ## License 
 
