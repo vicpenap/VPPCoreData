@@ -1,0 +1,2504 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>VPPCoreData Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 752)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">VPPCoreData </a></h1>
+				<a id="developerHome" href="../index.html">Víctor Pena Placer</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">VPPCoreData Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/dbFilename">&nbsp;&nbsp;&nbsp;&nbsp;dbFilename</option>
+	
+	<option value="//api/name/initialDBFilename">&nbsp;&nbsp;&nbsp;&nbsp;initialDBFilename</option>
+	
+	<option value="//api/name/mainContext">&nbsp;&nbsp;&nbsp;&nbsp;mainContext</option>
+	
+	<option value="//api/name/managedObjectModel">&nbsp;&nbsp;&nbsp;&nbsp;managedObjectModel</option>
+	
+	<option value="//api/name/persistentStoreCoordinator">&nbsp;&nbsp;&nbsp;&nbsp;persistentStoreCoordinator</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:">&nbsp;&nbsp;&nbsp;&nbsp;- allObjectsForEntity:orderedByAttribute:ascending:filteredBy:</option>
+	
+	<option value="//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:</option>
+	
+	<option value="//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- allObjectsForEntity:orderedByAttribute:ascending:filteredBy:managedObjectContext:</option>
+	
+	<option value="//api/name/allObjectsForEntity:sortDescriptors:filteredBy:">&nbsp;&nbsp;&nbsp;&nbsp;- allObjectsForEntity:sortDescriptors:filteredBy:</option>
+	
+	<option value="//api/name/allObjectsForEntity:sortDescriptors:filteredBy:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- allObjectsForEntity:sortDescriptors:filteredBy:completion:</option>
+	
+	<option value="//api/name/allObjectsForEntity:sortDescriptors:filteredBy:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- allObjectsForEntity:sortDescriptors:filteredBy:managedObjectContext:</option>
+	
+	<option value="//api/name/countObjectsForEntity:filteredBy:">&nbsp;&nbsp;&nbsp;&nbsp;- countObjectsForEntity:filteredBy:</option>
+	
+	<option value="//api/name/countObjectsForEntity:filteredBy:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- countObjectsForEntity:filteredBy:completion:</option>
+	
+	<option value="//api/name/countObjectsForEntity:filteredBy:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- countObjectsForEntity:filteredBy:managedObjectContext:</option>
+	
+	<option value="//api/name/createManagedObjectContext">&nbsp;&nbsp;&nbsp;&nbsp;- createManagedObjectContext</option>
+	
+	<option value="//api/name/deleteAllObjectsFromEntity:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteAllObjectsFromEntity:</option>
+	
+	<option value="//api/name/deleteAllObjectsFromEntity:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteAllObjectsFromEntity:managedObjectContext:</option>
+	
+	<option value="//api/name/deleteObject:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteObject:</option>
+	
+	<option value="//api/name/deleteObject:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteObject:managedObjectContext:</option>
+	
+	<option value="//api/name/findObjectFromEntity:withPredicate:">&nbsp;&nbsp;&nbsp;&nbsp;- findObjectFromEntity:withPredicate:</option>
+	
+	<option value="//api/name/findObjectFromEntity:withPredicate:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- findObjectFromEntity:withPredicate:completion:</option>
+	
+	<option value="//api/name/findObjectFromEntity:withPredicate:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- findObjectFromEntity:withPredicate:managedObjectContext:</option>
+	
+	<option value="//api/name/getNewObjectForEntity:">&nbsp;&nbsp;&nbsp;&nbsp;- getNewObjectForEntity:</option>
+	
+	<option value="//api/name/getNewObjectForEntity:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- getNewObjectForEntity:completion:</option>
+	
+	<option value="//api/name/getNewObjectForEntity:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- getNewObjectForEntity:managedObjectContext:</option>
+	
+	<option value="//api/name/objectWithExistingID:">&nbsp;&nbsp;&nbsp;&nbsp;- objectWithExistingID:</option>
+	
+	<option value="//api/name/objectWithExistingID:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- objectWithExistingID:managedObjectContext:</option>
+	
+	<option value="//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:</option>
+	
+	<option value="//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:</option>
+	
+	<option value="//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:</option>
+	
+	<option value="//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:</option>
+	
+	<option value="//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:</option>
+	
+	<option value="//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:managedObjectContext:</option>
+	
+	<option value="//api/name/objectsWithExistingIDs:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsWithExistingIDs:</option>
+	
+	<option value="//api/name/objectsWithExistingIDs:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsWithExistingIDs:managedObjectContext:</option>
+	
+	<option value="//api/name/saveAllChanges">&nbsp;&nbsp;&nbsp;&nbsp;- saveAllChanges</option>
+	
+	<option value="//api/name/saveManagedObjectContext:error:">&nbsp;&nbsp;&nbsp;&nbsp;- saveManagedObjectContext:error:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing to the singleton instance">Accessing to the singleton instance</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Configuring the sqlite filenames">Configuring the sqlite filenames</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Main thread Methods">Main thread Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Customizing Methods">Customizing Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Background Methods">Background Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_DifferentManagedObjectContext Methods">DifferentManagedObjectContext Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dbFilename">dbFilename</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initialDBFilename">initialDBFilename</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mainContext">mainContext</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/managedObjectModel">managedObjectModel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/persistentStoreCoordinator">persistentStoreCoordinator</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedInstance">sharedInstance</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:">allObjectsForEntity:orderedByAttribute:ascending:filteredBy:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:">allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:managedObjectContext:">allObjectsForEntity:orderedByAttribute:ascending:filteredBy:managedObjectContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allObjectsForEntity:sortDescriptors:filteredBy:">allObjectsForEntity:sortDescriptors:filteredBy:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allObjectsForEntity:sortDescriptors:filteredBy:completion:">allObjectsForEntity:sortDescriptors:filteredBy:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allObjectsForEntity:sortDescriptors:filteredBy:managedObjectContext:">allObjectsForEntity:sortDescriptors:filteredBy:managedObjectContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/countObjectsForEntity:filteredBy:">countObjectsForEntity:filteredBy:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/countObjectsForEntity:filteredBy:completion:">countObjectsForEntity:filteredBy:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/countObjectsForEntity:filteredBy:managedObjectContext:">countObjectsForEntity:filteredBy:managedObjectContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createManagedObjectContext">createManagedObjectContext</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteAllObjectsFromEntity:">deleteAllObjectsFromEntity:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteAllObjectsFromEntity:managedObjectContext:">deleteAllObjectsFromEntity:managedObjectContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteObject:">deleteObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteObject:managedObjectContext:">deleteObject:managedObjectContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/findObjectFromEntity:withPredicate:">findObjectFromEntity:withPredicate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/findObjectFromEntity:withPredicate:completion:">findObjectFromEntity:withPredicate:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/findObjectFromEntity:withPredicate:managedObjectContext:">findObjectFromEntity:withPredicate:managedObjectContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getNewObjectForEntity:">getNewObjectForEntity:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getNewObjectForEntity:completion:">getNewObjectForEntity:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getNewObjectForEntity:managedObjectContext:">getNewObjectForEntity:managedObjectContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectWithExistingID:">objectWithExistingID:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectWithExistingID:managedObjectContext:">objectWithExistingID:managedObjectContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:">objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:">objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:">objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:">objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:">objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:managedObjectContext:">objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:managedObjectContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsWithExistingIDs:">objectsWithExistingIDs:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsWithExistingIDs:managedObjectContext:">objectsWithExistingIDs:managedObjectContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveAllChanges">saveAllChanges</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveManagedObjectContext:error:">saveManagedObjectContext:error:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="VPPCoreData Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">VPPCoreData Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">VPPCoreData.h<br />VPPCoreData.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><a href="VPPCoreData.html">VPPCoreData</a> library simplifies the task of managing data with Core Data
+framework. This library offers an automatic setup of Core Data and a set of
+methods to set and retrieve data, both in foreground and background.</p>
+
+<h3>Storing data</h3>
+
+<p>When using this library with default setup, a new <code>model.sqlite</code> file will be
+placed in <code>Documents</code> directory on the first launch, and since then all changes
+will be persisted on that file. If you want to change that filename, use the
+<a href="#//api/name/dbFilename">dbFilename</a> property, specifying the new name. Remember to exclude the
+<code>.sqlite</code> extension.</p>
+
+<p>Persisting store type can be changed through <a href="#//api/name/persistentStoreCoordinator">persistentStoreCoordinator</a> property,
+using your own persistent store coordinator. This property should be changed
+always <strong>before</strong> using any of the provided query methods.</p>
+
+<p>By default, the model will be obtained by merging all models found in main
+bundle. This behavior can be changed through <a href="#//api/name/managedObjectModel">managedObjectModel</a> property, if you
+specify your own managed object model. This property should be changed always
+<strong>before</strong> using any of the provided query methods.</p>
+
+<h3>Distributing an application with a default set of data</h3>
+
+<p>You can include an sqlite file with a default set of data. In this case, if
+there is no sqlite file in documents directory when launching the app, the
+included file will be copied there. Then, the copied file will be used and
+modified when needed.</p>
+
+<p>If you want to include a default file, set the <a href="#//api/name/initialDBFilename">initialDBFilename</a> to its
+filename, excluding the <code>.sqlite</code> extension.</p>
+
+<h3>Accessing data from different threads, operations&hellip;</h3>
+
+<p>Several sets of methods are provided, grouped by the thread being used.</p>
+
+<ul>
+<li><p><em>Main thread operations</em>: these methods should be always called from main
+thread. They have attached a <code>NSManagedObjectContext</code> found in <a href="#//api/name/mainContext">mainContext</a>
+property. All returned entities are attached to that managed object context.</p></li>
+<li><p><em>Background operations</em>: these methods should be always called from main
+thread. In these methods you should provide a completion block. The difference
+with the previous set is that the request operations are performed in background,
+using a NSOperationQueue. Once the operation is finished, the completion block
+is automatically executed in main thread.</p>
+
+<ul>
+<li>If the invoked method is a fetch operation, all returned entities are automatically
+re-fetched in foreground using their objectIDs, and these refetched entities
+are passed through the completion block. Take into account that re-fetching the
+objects in main thread will block the UI if the amount of data is too big.</li>
+</ul>
+</li>
+<li><p><em>Different managedObjectContext operations</em>: these methods can be called in
+any thread. They will be performed in the that thread and the returned entities
+are attached to the given managed object context.</p></li>
+</ul>
+
+
+<p>Read Apple documentation about Concurrency and Core Data for further information:
+<a href="https://developer.apple.com/library/ios/#documentation/cocoa/conceptual/coredata/Articles/cdConcurrency.html#//apple_ref/doc/uid/TP40003385-SW1">Concurrency with Core Data</a></p>
+
+<h3>Modifying data in different threads</h3>
+
+<p>If you are modifying data in a thread different than the main one, when saving
+changes <strong>only the managed object context associated with the main thread
+will be notified</strong> of those changes. Is your responsibility to notify the
+changes to any other managed object context you could be using.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Accessing to the singleton instance" name="task_Accessing to the singleton instance"></a>
+						<h3 class="subsubtitle task-title">Accessing to the singleton instance</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedInstance">+&nbsp;sharedInstance</a></code>
+		<span class="tooltip"><p>Returns the library&rsquo;s singleton instance.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Configuring the sqlite filenames" name="task_Configuring the sqlite filenames"></a>
+						<h3 class="subsubtitle task-title">Configuring the sqlite filenames</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dbFilename">&nbsp;&nbsp;dbFilename</a></code>
+		<span class="tooltip"><p>Indicates the sqlite filename used to store information.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initialDBFilename">&nbsp;&nbsp;initialDBFilename</a></code>
+		<span class="tooltip"><p>Indicates the sqlite filename to copy when no sqlite file exists in the
+documents directory.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Main thread Methods" name="task_Main thread Methods"></a>
+						<h3 class="subsubtitle task-title">Main thread Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mainContext">&nbsp;&nbsp;mainContext</a></code>
+		<span class="tooltip"><p>Points to the managed object context attached to the main thread.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getNewObjectForEntity:">&ndash;&nbsp;getNewObjectForEntity:</a></code>
+		<span class="tooltip"><p>Creates and returns a new object for the given entity.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/findObjectFromEntity:withPredicate:">&ndash;&nbsp;findObjectFromEntity:withPredicate:</a></code>
+		<span class="tooltip"><p>Returns the first object for the given entity that matches the given
+predicate.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/countObjectsForEntity:filteredBy:">&ndash;&nbsp;countObjectsForEntity:filteredBy:</a></code>
+		<span class="tooltip"><p>Counts all objects for the given entity that match the given predicate.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:">&ndash;&nbsp;objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:</a></code>
+		<span class="tooltip"><p>Returns a page of objects for the given entity that match the given predicate.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:">&ndash;&nbsp;allObjectsForEntity:orderedByAttribute:ascending:filteredBy:</a></code>
+		<span class="tooltip"><p>Returns all objects for the given entity that match the given predicate,
+ordered by the given attribute.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:">&ndash;&nbsp;objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:</a></code>
+		<span class="tooltip"><p>Returns a page of objects for the given entity that match the given predicate.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allObjectsForEntity:sortDescriptors:filteredBy:">&ndash;&nbsp;allObjectsForEntity:sortDescriptors:filteredBy:</a></code>
+		<span class="tooltip"><p>Returns all objects for the given entity that match the given predicate.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteAllObjectsFromEntity:">&ndash;&nbsp;deleteAllObjectsFromEntity:</a></code>
+		<span class="tooltip"><p>Removes all objects for the given entity.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteObject:">&ndash;&nbsp;deleteObject:</a></code>
+		<span class="tooltip"><p>Removes the given object.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveAllChanges">&ndash;&nbsp;saveAllChanges</a></code>
+		<span class="tooltip"><p>Saves all pending changes for the main managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsWithExistingIDs:">&ndash;&nbsp;objectsWithExistingIDs:</a></code>
+		<span class="tooltip"><p>Refetches the given objects with the main managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectWithExistingID:">&ndash;&nbsp;objectWithExistingID:</a></code>
+		<span class="tooltip"><p>Refetches the given object with the main managed object context.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Customizing Methods" name="task_Customizing Methods"></a>
+						<h3 class="subsubtitle task-title">Customizing Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/managedObjectModel">&nbsp;&nbsp;managedObjectModel</a></code>
+		<span class="tooltip"><p>Holds a reference to the managed object model for the application.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/persistentStoreCoordinator">&nbsp;&nbsp;persistentStoreCoordinator</a></code>
+		<span class="tooltip"><p>Holds a reference to the used persistent store coordinator.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Background Methods" name="task_Background Methods"></a>
+						<h3 class="subsubtitle task-title">Background Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getNewObjectForEntity:completion:">&ndash;&nbsp;getNewObjectForEntity:completion:</a></code>
+		<span class="tooltip"><p>Creates in background a new object in background for the given entity and
+passes it through the completion <code>block</code> parameter.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/findObjectFromEntity:withPredicate:completion:">&ndash;&nbsp;findObjectFromEntity:withPredicate:completion:</a></code>
+		<span class="tooltip"><p>Locates in background the first object for the given entity that matches
+the given predicate and passes it through the completion <code>block</code> parameter.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/countObjectsForEntity:filteredBy:completion:">&ndash;&nbsp;countObjectsForEntity:filteredBy:completion:</a></code>
+		<span class="tooltip"><p>Counts in background all objects for the given entity that match the given
+predicate, and passes the result through the completion block.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:">&ndash;&nbsp;objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:</a></code>
+		<span class="tooltip"><p>Gets in background a page of objects for the given entity that match the
+given predicate and passes them through the completion block.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:">&ndash;&nbsp;allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:</a></code>
+		<span class="tooltip"><p>Fetches in background all objects for the given entity that match the given
+predicate, ordered by the given attribute and passes them through the completion
+block.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:">&ndash;&nbsp;objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:</a></code>
+		<span class="tooltip"><p>Fetches in background a page of objects for the given entity that match the
+given predicate and passes them through the completion block.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allObjectsForEntity:sortDescriptors:filteredBy:completion:">&ndash;&nbsp;allObjectsForEntity:sortDescriptors:filteredBy:completion:</a></code>
+		<span class="tooltip"><p>Gets in background all objects for the given entity that match the given
+predicate and passes them through the completion block.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="DifferentManagedObjectContext Methods" name="task_DifferentManagedObjectContext Methods"></a>
+						<h3 class="subsubtitle task-title">DifferentManagedObjectContext Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createManagedObjectContext">&ndash;&nbsp;createManagedObjectContext</a></code>
+		<span class="tooltip"><p>Creates and initializes a new managed object context, setting its persistent
+store coordinator.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/countObjectsForEntity:filteredBy:managedObjectContext:">&ndash;&nbsp;countObjectsForEntity:filteredBy:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Counts all objects for the given entity that match the given predicate using
+the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:managedObjectContext:">&ndash;&nbsp;allObjectsForEntity:orderedByAttribute:ascending:filteredBy:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Returns all objects for the given entity that match the given predicate,
+ordered by the given attribute using the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:">&ndash;&nbsp;objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Returns a page of objects for the given entity that match the given predicate
+using the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allObjectsForEntity:sortDescriptors:filteredBy:managedObjectContext:">&ndash;&nbsp;allObjectsForEntity:sortDescriptors:filteredBy:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Returns all objects for the given entity that match the given predicate,
+ordered by the given attribute using the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:managedObjectContext:">&ndash;&nbsp;objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Returns a page of objects for the given entity that match the given predicate
+  using the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/findObjectFromEntity:withPredicate:managedObjectContext:">&ndash;&nbsp;findObjectFromEntity:withPredicate:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Returns the first object for the given entity that matches the given
+predicate using the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getNewObjectForEntity:managedObjectContext:">&ndash;&nbsp;getNewObjectForEntity:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Creates and returns a new object for the given entity using the given
+managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteObject:managedObjectContext:">&ndash;&nbsp;deleteObject:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Removes the given object using the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteAllObjectsFromEntity:managedObjectContext:">&ndash;&nbsp;deleteAllObjectsFromEntity:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Removes all objects for the given entity using the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveManagedObjectContext:error:">&ndash;&nbsp;saveManagedObjectContext:error:</a></code>
+		<span class="tooltip"><p>Saves all pending changes for the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsWithExistingIDs:managedObjectContext:">&ndash;&nbsp;objectsWithExistingIDs:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Refetches the given objects with the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectWithExistingID:managedObjectContext:">&ndash;&nbsp;objectWithExistingID:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Refetches the given object with the given managed object context.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/dbFilename" title="dbFilename"></a>
+	<h3 class="subsubtitle method-title">dbFilename</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates the sqlite filename used to store information.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *dbFilename</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If you want to chage this property, you should do it always <strong>before</strong> using
+any of the provided query methods. Remember to exclude the <code>.sqlite</code> extension.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initialDBFilename" title="initialDBFilename"></a>
+	<h3 class="subsubtitle method-title">initialDBFilename</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates the sqlite filename to copy when no sqlite file exists in the
+documents directory.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *initialDBFilename</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If you want to chage this property, you should do it always <strong>before</strong> using
+any of the provided query methods. Remember to exclude the <code>.sqlite</code> extension.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mainContext" title="mainContext"></a>
+	<h3 class="subsubtitle method-title">mainContext</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Points to the managed object context attached to the main thread.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSManagedObjectContext *mainContext</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/managedObjectModel" title="managedObjectModel"></a>
+	<h3 class="subsubtitle method-title">managedObjectModel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Holds a reference to the managed object model for the application.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSManagedObjectModel *managedObjectModel</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>By default, the model will be obtained by merging all models found in main
+bundle. If you want to modify it with your own managed object model,
+you should do it always <strong>before</strong> using any of the provided query methods.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/persistentStoreCoordinator" title="persistentStoreCoordinator"></a>
+	<h3 class="subsubtitle method-title">persistentStoreCoordinator</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Holds a reference to the used persistent store coordinator.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSPersistentStoreCoordinator *persistentStoreCoordinator</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If you want to change it with your own persistent store coordinator, for example
+to specify a different persistent store type, you should changed it always
+<strong>before</strong> using any of the provided query methods.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedInstance" title="sharedInstance"></a>
+	<h3 class="subsubtitle method-title">sharedInstance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the library&rsquo;s singleton instance.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (VPPCoreData *)sharedInstance</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:" title="allObjectsForEntity:orderedByAttribute:ascending:filteredBy:"></a>
+	<h3 class="subsubtitle method-title">allObjectsForEntity:orderedByAttribute:ascending:filteredBy:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns all objects for the given entity that match the given predicate,
+ordered by the given attribute.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)allObjectsForEntity:(NSString *)<em>entity</em> orderedByAttribute:(NSString *)<em>attributeOrNil</em> ascending:(BOOL)<em>ascending</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:" title="allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:"></a>
+	<h3 class="subsubtitle method-title">allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetches in background all objects for the given entity that match the given
+predicate, ordered by the given attribute and passes them through the completion
+block.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)allObjectsForEntity:(NSString *)<em>entity</em> orderedByAttribute:(NSString *)<em>attributeOrNil</em> ascending:(BOOL)<em>ascending</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> completion:(void ( ^ ) ( NSArray *objects ))<em>block</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The completion block is launched in main thread. The returned entities are
+re-fetched with main managed object context, so it is safe to use them in main
+thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:managedObjectContext:" title="allObjectsForEntity:orderedByAttribute:ascending:filteredBy:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">allObjectsForEntity:orderedByAttribute:ascending:filteredBy:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns all objects for the given entity that match the given predicate,
+ordered by the given attribute using the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)allObjectsForEntity:(NSString *)<em>entity</em> orderedByAttribute:(NSString *)<em>attributeOrNil</em> ascending:(BOOL)<em>ascending</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allObjectsForEntity:sortDescriptors:filteredBy:" title="allObjectsForEntity:sortDescriptors:filteredBy:"></a>
+	<h3 class="subsubtitle method-title">allObjectsForEntity:sortDescriptors:filteredBy:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns all objects for the given entity that match the given predicate.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)allObjectsForEntity:(NSString *)<em>entity</em> sortDescriptors:(NSArray *)<em>sortDescriptors</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sortDescriptors</em></dt>
+			<dd><p>An array of <code>NSSortDescriptor</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allObjectsForEntity:sortDescriptors:filteredBy:completion:" title="allObjectsForEntity:sortDescriptors:filteredBy:completion:"></a>
+	<h3 class="subsubtitle method-title">allObjectsForEntity:sortDescriptors:filteredBy:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets in background all objects for the given entity that match the given
+predicate and passes them through the completion block.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)allObjectsForEntity:(NSString *)<em>entity</em> sortDescriptors:(NSArray *)<em>sortDescriptors</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> completion:(void ( ^ ) ( NSArray *objects ))<em>block</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sortDescriptors</em></dt>
+			<dd><p>An array of <code>NSSortDescriptor</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The completion block is launched in main thread. The returned entities are
+re-fetched with main managed object context, so it is safe to use them in main
+thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allObjectsForEntity:sortDescriptors:filteredBy:managedObjectContext:" title="allObjectsForEntity:sortDescriptors:filteredBy:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">allObjectsForEntity:sortDescriptors:filteredBy:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns all objects for the given entity that match the given predicate,
+ordered by the given attribute using the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)allObjectsForEntity:(NSString *)<em>entity</em> sortDescriptors:(NSArray *)<em>sortDescriptors</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/countObjectsForEntity:filteredBy:" title="countObjectsForEntity:filteredBy:"></a>
+	<h3 class="subsubtitle method-title">countObjectsForEntity:filteredBy:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Counts all objects for the given entity that match the given predicate.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (int)countObjectsForEntity:(NSString *)<em>entity</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/countObjectsForEntity:filteredBy:completion:" title="countObjectsForEntity:filteredBy:completion:"></a>
+	<h3 class="subsubtitle method-title">countObjectsForEntity:filteredBy:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Counts in background all objects for the given entity that match the given
+predicate, and passes the result through the completion block.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)countObjectsForEntity:(NSString *)<em>entity</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> completion:(void ( ^ ) ( int count ))<em>block</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The completion block is launched in main thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/countObjectsForEntity:filteredBy:managedObjectContext:" title="countObjectsForEntity:filteredBy:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">countObjectsForEntity:filteredBy:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Counts all objects for the given entity that match the given predicate using
+the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (int)countObjectsForEntity:(NSString *)<em>entity</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createManagedObjectContext" title="createManagedObjectContext"></a>
+	<h3 class="subsubtitle method-title">createManagedObjectContext</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and initializes a new managed object context, setting its persistent
+store coordinator.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSManagedObjectContext *)createManagedObjectContext</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The returned instance is autoreleased.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteAllObjectsFromEntity:" title="deleteAllObjectsFromEntity:"></a>
+	<h3 class="subsubtitle method-title">deleteAllObjectsFromEntity:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes all objects for the given entity.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)deleteAllObjectsFromEntity:(NSString *)<em>entity</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteAllObjectsFromEntity:managedObjectContext:" title="deleteAllObjectsFromEntity:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">deleteAllObjectsFromEntity:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes all objects for the given entity using the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)deleteAllObjectsFromEntity:(NSString *)<em>entity</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteObject:" title="deleteObject:"></a>
+	<h3 class="subsubtitle method-title">deleteObject:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the given object.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)deleteObject:(id)<em>object</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteObject:managedObjectContext:" title="deleteObject:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">deleteObject:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the given object using the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)deleteObject:(id)<em>object</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/findObjectFromEntity:withPredicate:" title="findObjectFromEntity:withPredicate:"></a>
+	<h3 class="subsubtitle method-title">findObjectFromEntity:withPredicate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the first object for the given entity that matches the given
+predicate.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)findObjectFromEntity:(NSString *)<em>entity</em> withPredicate:(NSPredicate *)<em>predicate</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/findObjectFromEntity:withPredicate:completion:" title="findObjectFromEntity:withPredicate:completion:"></a>
+	<h3 class="subsubtitle method-title">findObjectFromEntity:withPredicate:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Locates in background the first object for the given entity that matches
+the given predicate and passes it through the completion <code>block</code> parameter.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)findObjectFromEntity:(NSString *)<em>entity</em> withPredicate:(NSPredicate *)<em>predicate</em> completion:(void ( ^ ) ( id object ))<em>block</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The completion block is launched in main thread. The returned entities are
+re-fetched with main managed object context, so it is safe to use them in main
+thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/findObjectFromEntity:withPredicate:managedObjectContext:" title="findObjectFromEntity:withPredicate:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">findObjectFromEntity:withPredicate:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the first object for the given entity that matches the given
+predicate using the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)findObjectFromEntity:(NSString *)<em>entity</em> withPredicate:(NSPredicate *)<em>predicate</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getNewObjectForEntity:" title="getNewObjectForEntity:"></a>
+	<h3 class="subsubtitle method-title">getNewObjectForEntity:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a new object for the given entity.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)getNewObjectForEntity:(NSString *)<em>entityName</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getNewObjectForEntity:completion:" title="getNewObjectForEntity:completion:"></a>
+	<h3 class="subsubtitle method-title">getNewObjectForEntity:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates in background a new object in background for the given entity and
+passes it through the completion <code>block</code> parameter.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)getNewObjectForEntity:(NSString *)<em>entityName</em> completion:(void ( ^ ) ( id object ))<em>block</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The completion block is launched in main thread. The returned entity is
+re-fetched with main managed object context, so it is safe to use it in main
+thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getNewObjectForEntity:managedObjectContext:" title="getNewObjectForEntity:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">getNewObjectForEntity:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a new object for the given entity using the given
+managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)getNewObjectForEntity:(NSString *)<em>entityName</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectWithExistingID:" title="objectWithExistingID:"></a>
+	<h3 class="subsubtitle method-title">objectWithExistingID:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Refetches the given object with the main managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)objectWithExistingID:(id)<em>objectID</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The specified <code>objectID</code> parameter can hold an object from both
+<code>NSManagedObjectID</code> or <code>NSManagedObject</code>class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectWithExistingID:managedObjectContext:" title="objectWithExistingID:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">objectWithExistingID:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Refetches the given object with the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)objectWithExistingID:(id)<em>objectID</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The specified <code>objectID</code> parameter can hold an object from both
+<code>NSManagedObjectID</code> or <code>NSManagedObject</code>class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:" title="objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:"></a>
+	<h3 class="subsubtitle method-title">objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a page of objects for the given entity that match the given predicate.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsForEntity:(NSString *)<em>entity</em> orderedByAttribute:(NSString *)<em>attributeOrNil</em> ascending:(BOOL)<em>ascending</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> fetchLimit:(int)<em>fetchLimit</em> offset:(int)<em>offset</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attributeOrNil</em></dt>
+			<dd><p>the attribute used to sort the results. Can be <code>nil</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ascending</em></dt>
+			<dd><p>Indicates whether the objects should be sorted ascending or
+descending (when ascending is NO).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fetchLimit</em></dt>
+			<dd><p>the max amount of objects to retrieve.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>the page&rsquo;s offset.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:" title="objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:"></a>
+	<h3 class="subsubtitle method-title">objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets in background a page of objects for the given entity that match the
+given predicate and passes them through the completion block.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)objectsForEntity:(NSString *)<em>entity</em> orderedByAttribute:(NSString *)<em>attributeOrNil</em> ascending:(BOOL)<em>ascending</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> fetchLimit:(int)<em>fetchLimit</em> offset:(int)<em>offset</em> completion:(void ( ^ ) ( NSArray *objects ))<em>block</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attributeOrNil</em></dt>
+			<dd><p>the attribute used to sort the results. Can be <code>nil</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ascending</em></dt>
+			<dd><p>Indicates whether the objects should be sorted ascending or
+descending (when ascending is NO).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fetchLimit</em></dt>
+			<dd><p>the max amount of objects to retrieve.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>the page&rsquo;s offset.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>The completion block used to pass the retrieved objects.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The completion block is launched in main thread. The returned entities are
+re-fetched with main managed object context, so it is safe to use them in main
+thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:" title="objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a page of objects for the given entity that match the given predicate
+using the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsForEntity:(NSString *)<em>entity</em> orderedByAttribute:(NSString *)<em>attributeOrNil</em> ascending:(BOOL)<em>ascending</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> fetchLimit:(int)<em>fetchLimit</em> offset:(int)<em>offset</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attributeOrNil</em></dt>
+			<dd><p>the attribute used to sort the results. Can be <code>nil</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ascending</em></dt>
+			<dd><p>Indicates whether the objects should be sorted ascending or
+descending (when ascending is NO).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fetchLimit</em></dt>
+			<dd><p>the max amount of objects to retrieve.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>the page&rsquo;s offset.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>managedObjectContext</em></dt>
+			<dd><p>the managed object context to use.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:" title="objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:"></a>
+	<h3 class="subsubtitle method-title">objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a page of objects for the given entity that match the given predicate.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsForEntity:(NSString *)<em>entity</em> sortDescriptors:(NSArray *)<em>sortDescriptors</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> fetchLimit:(int)<em>fetchLimit</em> offset:(int)<em>offset</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sortDescriptors</em></dt>
+			<dd><p>An array of <code>NSSortDescriptor</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fetchLimit</em></dt>
+			<dd><p>the max amount of objects to retrieve.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>the page&rsquo;s offset.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:" title="objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:"></a>
+	<h3 class="subsubtitle method-title">objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetches in background a page of objects for the given entity that match the
+given predicate and passes them through the completion block.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)objectsForEntity:(NSString *)<em>entity</em> sortDescriptors:(NSArray *)<em>sortDescriptors</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> fetchLimit:(int)<em>fetchLimit</em> offset:(int)<em>offset</em> completion:(void ( ^ ) ( NSArray *objects ))<em>block</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sortDescriptors</em></dt>
+			<dd><p>An array of <code>NSSortDescriptor</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fetchLimit</em></dt>
+			<dd><p>the max amount of objects to retrieve.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>the page&rsquo;s offset.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The completion block is launched in main thread. The returned entities are
+re-fetched with main managed object context, so it is safe to use them in main
+thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:managedObjectContext:" title="objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a page of objects for the given entity that match the given predicate
+  using the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsForEntity:(NSString *)<em>entity</em> sortDescriptors:(NSArray *)<em>sortDescriptors</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> fetchLimit:(int)<em>fetchLimit</em> offset:(int)<em>offset</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sortDescriptors</em></dt>
+			<dd><p>An array of <code>NSSortDescriptor</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fetchLimit</em></dt>
+			<dd><p>the max amount of objects to retrieve.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>the page&rsquo;s offset.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsWithExistingIDs:" title="objectsWithExistingIDs:"></a>
+	<h3 class="subsubtitle method-title">objectsWithExistingIDs:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Refetches the given objects with the main managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsWithExistingIDs:(NSArray *)<em>ids</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The specified <code>ids</code> array can hold objects from both <code>NSManagedObjectID</code> or
+<code>NSManagedObject</code>class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsWithExistingIDs:managedObjectContext:" title="objectsWithExistingIDs:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">objectsWithExistingIDs:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Refetches the given objects with the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsWithExistingIDs:(NSArray *)<em>ids</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The specified <code>ids</code> array can hold objects from both <code>NSManagedObjectID</code> or
+<code>NSManagedObject</code>class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveAllChanges" title="saveAllChanges"></a>
+	<h3 class="subsubtitle method-title">saveAllChanges</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves all pending changes for the main managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)saveAllChanges</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This operation would save all pending changes made to the objects that have
+been fetched through the main managed object context.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveManagedObjectContext:error:" title="saveManagedObjectContext:error:"></a>
+	<h3 class="subsubtitle method-title">saveManagedObjectContext:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves all pending changes for the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)saveManagedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em> error:(NSError **)<em>error</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This operation would save all pending changes made to the objects that have
+been fetched through the given managed object context.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Víctor Pena Placer. All rights reserved. (Last updated: 2012-02-15)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 752)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>
