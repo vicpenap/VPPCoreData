@@ -91,7 +91,8 @@
  any thread. They will be performed in the that thread and the returned entities
  are attached to the given managed object context.
  
- 
+ Read Apple documentation about Concurrency and Core Data for further information:
+ [Concurrency with Core Data](https://developer.apple.com/library/ios/#documentation/cocoa/conceptual/coredata/Articles/cdConcurrency.html#//apple_ref/doc/uid/TP40003385-SW1)
  
  ### Modifying data in different threads 
  
