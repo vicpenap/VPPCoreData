@@ -62,14 +62,15 @@
     
 }
 
-- (void) addQuotes {
+- (void) addQuotes:(int)amount {
     loading = YES;
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     [q addOperationWithBlock:^{
+        int count = [Service countAllObjects];
         NSMutableArray *arr = [NSMutableArray array];
-        for (int i = [self.quotes count]+1; i <= [self.quotes count]+10; i++) {
+        for (int i = count+1; i <= count+amount; i++) {
             NSString *text;
             if (i % 2 == 0) {
                 text = [NSString stringWithFormat:@"%d is even",i];
@@ -87,6 +88,14 @@
         }];
     }];
     [q release];
+}
+
+- (void) addTenQoutes {
+    [self addQuotes:10];
+}
+
+- (void) addTwoThousandQuotes {
+    [self addQuotes:2000];
 }
 
 - (void) remove {
@@ -110,6 +119,8 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
+    self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"2000" style:UIBarButtonItemStyleBordered target:self action:@selector(addTwoThousandQuotes)] autorelease];
+    
     NSMutableArray *buttons = [NSMutableArray array];
     [buttons addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(remove)] autorelease]];
     [buttons addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addQuotes)] autorelease]];

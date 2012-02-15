@@ -14,4 +14,6 @@
 + (void) findQuotesWithText:(NSString *)text completion:(void (^) (NSArray *data))block;
 + (void) allQuotesCompletion:(void (^) (NSArray *data))block; 
 + (void) removeAllObjects;
++ (int) countAllObjects;
+
 @end

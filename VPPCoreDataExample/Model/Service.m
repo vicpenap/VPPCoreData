@@ -54,6 +54,12 @@
     return q;
 }
 
-
++ (int) countAllObjects {
+    NSManagedObjectContext *moc = [[[VPPCoreData sharedInstance] createManagedObjectContext] retain];
+    int count = [[VPPCoreData sharedInstance] countObjectsForEntity:@"Quote" filteredBy:nil managedObjectContext:moc];
+    [moc release];
+    
+    return count;
+}
 
 @end
