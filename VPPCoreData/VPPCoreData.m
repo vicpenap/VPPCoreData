@@ -240,7 +240,7 @@
 	[fetchRequest release];
     
 	if (error) {
-		// TODO: Manage error executing fetch
+		// Manage error executing fetch
 	}
 	
 	return result;
@@ -264,7 +264,6 @@
     
     NSArray *sortDescriptors = nil;
     if (attributeOrNil) {
-        // Edit the sort key as appropriate.
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:attributeOrNil ascending:ascending];
         sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
         [sortDescriptor release];
@@ -320,7 +319,7 @@
 	[fetchRequest release];
     
 	if (error) {
-		// TODO: Manage error executing fetch
+		// Manage error executing fetch
 	}
     
 	return result;
