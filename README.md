@@ -18,6 +18,8 @@ later and it may contain bugs.
 
 ## Changelog
 
+- 2012/03/14 (v0.1.1): Bug fixing: two memory issues and problem when creating
+objects that have require relationships.
 - 2012/02/15 (v0.1.0): First release.
 
 ## License 
