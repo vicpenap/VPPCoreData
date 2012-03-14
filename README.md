@@ -1,4 +1,4 @@
-# VPPCoreData v0.1.0
+# VPPCoreData v0.1.1
 
 VPPCoreData library simplifies the task of managing data with Core Data 
 framework. This library offers an automatic setup of Core Data and a set of
