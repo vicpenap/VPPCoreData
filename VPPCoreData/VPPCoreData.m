@@ -357,7 +357,6 @@
 		//could not be saved. Advise the user to  
 		//try again or restart the application. 
         
-        obj = nil;
     }
     
     return obj;
