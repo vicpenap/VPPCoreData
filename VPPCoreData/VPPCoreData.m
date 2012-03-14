@@ -50,7 +50,7 @@
 
 - (void) setManagedObjectModel:(NSManagedObjectModel *)managedObjectModel {
     if (managedObjectModel_ != nil) {
-        [managedObjectModel_ release];
+        [managedObjectModel_ autorelease];
         managedObjectModel_ = nil;
     }
     managedObjectModel_ = [managedObjectModel retain];
@@ -75,7 +75,7 @@
 
 - (void) setPersistentStoreCoordinator:(NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     if (persistentStoreCoordinator_ != nil) {
-        [persistentStoreCoordinator_ release];
+        [persistentStoreCoordinator_ autorelease];
         persistentStoreCoordinator_ = nil;
     }
     persistentStoreCoordinator_ = [persistentStoreCoordinator retain];
