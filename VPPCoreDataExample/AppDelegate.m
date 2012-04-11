@@ -8,15 +8,17 @@
 
 #import "AppDelegate.h"
 #import "QuotesViewController.h"
+#import "ARQuotesViewController.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize navigationController;
+@synthesize tabBarController;
 
 - (void)dealloc
 {
     [_window release];
-    self.navigationController = nil;
+    self.tabBarController = nil;
     [super dealloc];
 }
 
@@ -25,10 +27,22 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
     QuotesViewController *q = [[QuotesViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:q] autorelease];
+    UINavigationController *navigationController1 = [[UINavigationController alloc] initWithRootViewController:q];
     [q release];
-    [self.window addSubview:self.navigationController.view];
+    
+    ARQuotesViewController *arq = [[ARQuotesViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    UINavigationController *navigationController2 = [[UINavigationController alloc] initWithRootViewController:arq];
+    [arq release];
+    
+    self.tabBarController = [[[UITabBarController alloc] init] autorelease];
+    
+    [self.tabBarController setViewControllers:[NSArray arrayWithObjects:navigationController1, navigationController2, nil]];
+    [navigationController1 release];
+    [navigationController2 release];    
+    
+    [self.window addSubview:self.tabBarController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }

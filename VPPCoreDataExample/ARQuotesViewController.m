@@ -1,15 +1,17 @@
 //
-//  QuotesViewController.m
+//  ARQuotesViewController.m
 //  VPPCoreDataExample
 //
-//  Created by Víctor on 14/02/12.
+//  Created by Víctor on 11/04/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "QuotesViewController.h"
+#import "ARQuotesViewController.h"
+#import "Quote.h"
+#import "VPPCoreDataActiveRecord.h"
 #import "Service.h"
 
-@implementation QuotesViewController
+@implementation ARQuotesViewController
 @synthesize quotes, segmentedControl;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -17,7 +19,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        self.title = @"Plain Objects";
+        self.title = @"Active Record";
     }
     return self;
 }
@@ -34,12 +36,9 @@
     loading = YES;
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     
-    
-    [Service allQuotesCompletion:^(NSArray *data) {
-        loading = NO;
-        self.quotes = data;
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-    }];
+    self.quotes = [Quote allOrderBy:@"date desc"];
+    loading = NO;
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 
@@ -55,11 +54,9 @@
         loading = YES;
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
         
-        [Service findQuotesWithText:textSelected completion:^(NSArray *data) {
-            loading = NO;
-            self.quotes = data;
-            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-        }];   
+        self.quotes = [Quote findBy:[NSPredicate predicateWithFormat:@"quote contains[cd] %@",textSelected] orderBy:@"date"];
+        loading = NO;
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
     
 }
@@ -70,7 +67,8 @@
     
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     [q addOperationWithBlock:^{
-        int count = [Service countAllObjects];
+        NSManagedObjectContext *moc = [[VPPCoreData sharedInstance] createManagedObjectContext];
+        int count = [Service countAllObjects]; //TODO: change this
         NSMutableArray *arr = [NSMutableArray array];
         for (int i = count+1; i <= count+amount; i++) {
             NSString *text;
@@ -80,9 +78,13 @@
             else {
                 text = [NSString stringWithFormat:@"%d is odd",i];
             }
-            Quote *q = [Service createQuoteWithText:text];
+            Quote *q = [[Quote moc:moc] create];
+            q.quote = text;
+            q.date = [NSDate date];
             [arr addObject:q]; 
         }
+        
+        [moc saveChanges:NULL];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             loading = NO;
@@ -117,10 +119,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"2000" style:UIBarButtonItemStyleBordered target:self action:@selector(addTwoThousandQuotes)] autorelease];
     
     NSMutableArray *buttons = [NSMutableArray array];
@@ -134,8 +136,6 @@
     self.segmentedControl.selectedSegmentIndex = 0;
     
     self.navigationItem.titleView = self.segmentedControl;
-    
-    [self segmentedControlChanged:self.segmentedControl];
 }
 
 - (void)viewDidUnload
@@ -155,7 +155,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self segmentedControlChanged:self.segmentedControl];    
+    [self segmentedControlChanged:self.segmentedControl];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -216,43 +216,43 @@
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }   
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }   
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 #pragma mark - Table view delegate
 
@@ -269,3 +269,4 @@
 }
 
 @end
+

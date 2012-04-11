@@ -18,7 +18,11 @@
 - (id) refetch;
 
 - (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
+
 - (NSArray *) all;
+- (NSArray *) findBy:(NSPredicate *)predicate;
+
+- (NSArray *) allOrderBy:(NSString *)orderBy;
 - (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
 - (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit:(int)limit;
 
@@ -43,7 +47,11 @@
 - (id) refetch;
 
 + (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
+
 + (NSArray *) all;
++ (NSArray *) findBy:(NSPredicate *)predicate;
+
++ (NSArray *) allOrderBy:(NSString *)orderBy;
 + (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
 + (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit:(int)limit;
 

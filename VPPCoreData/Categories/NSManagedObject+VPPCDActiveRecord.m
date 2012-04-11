@@ -69,17 +69,17 @@ const char objectKey;
 
 - (NSManagedObjectContext *) moc 
 {
-    return [self moc];
+    return [[self class] moc];
 }
 
 
 - (NSManagedObjectContext *) moc:(NSManagedObjectContext *)moc
 {
-    return [self moc:moc];
+    return [[self class] moc:moc];
 }
 
 - (NSManagedObjectContext *) mainMOC {
-    return [self moc:[[VPPCoreData sharedInstance] mainContext]];
+    return [[self class] moc:[[VPPCoreData sharedInstance] mainContext]];
 }
 
 
@@ -101,6 +101,15 @@ const char objectKey;
     return [[self mainMOC] all];
 }
 
++ (NSArray *) findBy:(NSPredicate *)predicate
+{
+    return [[self mainMOC] findBy:predicate orderBy:nil];
+}
+
++ (NSArray *) allOrderBy:(NSString *)orderBy
+{
+    return [[self mainMOC] allOrderBy:orderBy];
+}
 
 + (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy
 {

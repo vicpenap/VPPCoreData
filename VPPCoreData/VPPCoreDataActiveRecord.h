@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import "VPPCoreData.h"
 #import "NSManagedObject+VPPCDActiveRecord.h"
 #import "NSManagedObjectContext+VPPCDActiveRecord.h"
 #import "VPPCoreDataActiveRecordProtocol.h"

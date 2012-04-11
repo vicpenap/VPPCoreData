@@ -56,6 +56,17 @@ extern const char objectKey;
     return [[VPPCoreData sharedInstance] allObjectsForEntity:[self getClassName] sortDescriptors:nil filteredBy:nil managedObjectContext:self];
 }
 
+- (NSArray *) findBy:(NSPredicate *)predicate
+{
+    return [[VPPCoreData sharedInstance] allObjectsForEntity:[self getClassName] orderBy:nil filteredBy:predicate managedObjectContext:self];
+}
+
+
+- (NSArray *) allOrderBy:(NSString *)orderBy
+{
+    return [[VPPCoreData sharedInstance] allObjectsForEntity:[self getClassName] orderBy:orderBy filteredBy:nil managedObjectContext:self];
+}
+
 - (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy
 {
     return [[VPPCoreData sharedInstance] allObjectsForEntity:[self getClassName] orderBy:orderBy filteredBy:predicate managedObjectContext:self];

@@ -11,6 +11,8 @@
 		57548D881535E5630084C420 /* NSManagedObjectContext+VPPCDActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 57548D7F1535E5630084C420 /* NSManagedObjectContext+VPPCDActiveRecord.m */; };
 		57548D891535E5630084C420 /* NSSortDescriptor+VPPCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 57548D811535E5630084C420 /* NSSortDescriptor+VPPCoreData.m */; };
 		57548D8A1535E5630084C420 /* VPPCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 57548D841535E5630084C420 /* VPPCoreData.m */; };
+		57548D901535EE9E0084C420 /* ARQuotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57548D8F1535EE9E0084C420 /* ARQuotesViewController.m */; };
+		57548D931535F2170084C420 /* NSManagedObjectContext+VPPCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 57548D921535F2170084C420 /* NSManagedObjectContext+VPPCoreData.m */; };
 		57816AAB14EA5A3400DD1052 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57816AAA14EA5A3400DD1052 /* CoreData.framework */; };
 		57816AB314EA7F0600DD1052 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57816AB114EA7F0600DD1052 /* Model.xcdatamodeld */; };
 		57816AB614EA7F3D00DD1052 /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 57816AB514EA7F3D00DD1052 /* Quote.m */; };
@@ -36,6 +38,10 @@
 		57548D841535E5630084C420 /* VPPCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPPCoreData.m; sourceTree = "<group>"; };
 		57548D851535E5630084C420 /* VPPCoreDataActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPPCoreDataActiveRecord.h; sourceTree = "<group>"; };
 		57548D861535E5630084C420 /* VPPCoreDataActiveRecordProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPPCoreDataActiveRecordProtocol.h; sourceTree = "<group>"; };
+		57548D8E1535EE9D0084C420 /* ARQuotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARQuotesViewController.h; sourceTree = "<group>"; };
+		57548D8F1535EE9E0084C420 /* ARQuotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARQuotesViewController.m; sourceTree = "<group>"; };
+		57548D911535F2170084C420 /* NSManagedObjectContext+VPPCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+VPPCoreData.h"; sourceTree = "<group>"; };
+		57548D921535F2170084C420 /* NSManagedObjectContext+VPPCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+VPPCoreData.m"; sourceTree = "<group>"; };
 		57816AAA14EA5A3400DD1052 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		57816AB214EA7F0600DD1052 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		57816AB414EA7F3D00DD1052 /* Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quote.h; sourceTree = "<group>"; };
@@ -93,6 +99,8 @@
 				57548D7F1535E5630084C420 /* NSManagedObjectContext+VPPCDActiveRecord.m */,
 				57548D801535E5630084C420 /* NSSortDescriptor+VPPCoreData.h */,
 				57548D811535E5630084C420 /* NSSortDescriptor+VPPCoreData.m */,
+				57548D911535F2170084C420 /* NSManagedObjectContext+VPPCoreData.h */,
+				57548D921535F2170084C420 /* NSManagedObjectContext+VPPCoreData.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -147,6 +155,8 @@
 				57F4A1DE14EA586A0048D821 /* Supporting Files */,
 				57816ABA14EA815200DD1052 /* QuotesViewController.h */,
 				57816ABB14EA815200DD1052 /* QuotesViewController.m */,
+				57548D8E1535EE9D0084C420 /* ARQuotesViewController.h */,
+				57548D8F1535EE9E0084C420 /* ARQuotesViewController.m */,
 			);
 			path = VPPCoreDataExample;
 			sourceTree = "<group>";
@@ -233,6 +243,8 @@
 				57548D881535E5630084C420 /* NSManagedObjectContext+VPPCDActiveRecord.m in Sources */,
 				57548D891535E5630084C420 /* NSSortDescriptor+VPPCoreData.m in Sources */,
 				57548D8A1535E5630084C420 /* VPPCoreData.m in Sources */,
+				57548D901535EE9E0084C420 /* ARQuotesViewController.m in Sources */,
+				57548D931535F2170084C420 /* NSManagedObjectContext+VPPCoreData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
