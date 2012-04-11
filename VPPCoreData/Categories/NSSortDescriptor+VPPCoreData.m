@@ -35,7 +35,8 @@ typedef enum {
 
 @implementation NSSortDescriptor (VPPCoreData)
 
-+ (VPPCoreDataSorting) ascendingFromString:(NSString *)ascendingRaw {
++ (VPPCoreDataSorting) ascendingFromString:(NSString *)ascendingRaw 
+{
     NSString *ascending = nil;
     if (ascendingRaw) {
         ascending = [ascendingRaw trim];
@@ -55,7 +56,8 @@ typedef enum {
     return VPPCoreDataSortingAscending;
 }
 
-+ (BOOL) boolFromSorting:(VPPCoreDataSorting)sorting {
++ (BOOL) boolFromSorting:(VPPCoreDataSorting)sorting 
+{
     switch (sorting) {
         case VPPCoreDataSortingDescending:
             return NO;
@@ -64,7 +66,8 @@ typedef enum {
     }
 }
 
-+ (NSSortDescriptor *) sortDescriptorByKey:(NSString *)keyRaw ascending:(NSString *)ascendingString {
++ (NSSortDescriptor *) sortDescriptorByKey:(NSString *)keyRaw ascending:(NSString *)ascendingString 
+{
     NSString *key = [keyRaw trim];
 
     VPPCoreDataSorting sorting = [self ascendingFromString:ascendingString];
@@ -79,7 +82,8 @@ typedef enum {
     return descriptor;
 }
 
-+ (NSSortDescriptor *) parseComponent:(NSString *)component {
++ (NSSortDescriptor *) parseComponent:(NSString *)component
+{
     NSString *trimmedComponent = [component trim];
     
     NSArray *parts = [trimmedComponent componentsSeparatedByString:@" "];
@@ -98,7 +102,8 @@ typedef enum {
     }
 }
 
-+ (NSArray *) parseComponents:(NSArray *)components {
++ (NSArray *) parseComponents:(NSArray *)components 
+{
     NSMutableArray *descriptors = [NSMutableArray array];
     for (NSString *component in components) {
         NSSortDescriptor *descriptor = [self parseComponent:component];
@@ -110,7 +115,8 @@ typedef enum {
     return [descriptors count] > 0 ? descriptors : nil;
 }
 
-+ (NSArray *) sortDescriptorsFromSQLString:(NSString *)string {
++ (NSArray *) sortDescriptorsFromSQLString:(NSString *)string
+{
     NSArray *components = [string componentsSeparatedByString:@","];
     
     NSArray *descriptors = [self parseComponents:components];

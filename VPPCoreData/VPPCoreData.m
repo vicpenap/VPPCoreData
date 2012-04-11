@@ -379,7 +379,8 @@
                            filteredBy:predicate
                            fetchLimit:1
                                offset:0
-                 managedObjectContext:managedObjectContext] count] != 0) {
+                 managedObjectContext:managedObjectContext] count] != 0)
+    {
 		return [tmp objectAtIndex:0];
 	}
 	return nil;
