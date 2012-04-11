@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57548D871535E5630084C420 /* NSManagedObject+VPPCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 57548D7D1535E5630084C420 /* NSManagedObject+VPPCoreData.m */; };
+		57548D881535E5630084C420 /* NSManagedObjectContext+VPPCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 57548D7F1535E5630084C420 /* NSManagedObjectContext+VPPCoreData.m */; };
+		57548D891535E5630084C420 /* NSSortDescriptor+VPPCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 57548D811535E5630084C420 /* NSSortDescriptor+VPPCoreData.m */; };
+		57548D8A1535E5630084C420 /* VPPCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 57548D841535E5630084C420 /* VPPCoreData.m */; };
 		57816AAB14EA5A3400DD1052 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57816AAA14EA5A3400DD1052 /* CoreData.framework */; };
 		57816AB314EA7F0600DD1052 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57816AB114EA7F0600DD1052 /* Model.xcdatamodeld */; };
 		57816AB614EA7F3D00DD1052 /* Quote.m in Sources */ = {isa = PBXBuildFile; fileRef = 57816AB514EA7F3D00DD1052 /* Quote.m */; };
@@ -18,10 +22,20 @@
 		57F4A1E214EA586A0048D821 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57F4A1E014EA586A0048D821 /* InfoPlist.strings */; };
 		57F4A1E414EA586A0048D821 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F4A1E314EA586A0048D821 /* main.m */; };
 		57F4A1E814EA586A0048D821 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F4A1E714EA586A0048D821 /* AppDelegate.m */; };
-		57F4A1F514EA58AF0048D821 /* VPPCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F4A1F414EA58AF0048D821 /* VPPCoreData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57548D7C1535E5630084C420 /* NSManagedObject+VPPCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+VPPCoreData.h"; sourceTree = "<group>"; };
+		57548D7D1535E5630084C420 /* NSManagedObject+VPPCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+VPPCoreData.m"; sourceTree = "<group>"; };
+		57548D7E1535E5630084C420 /* NSManagedObjectContext+VPPCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+VPPCoreData.h"; sourceTree = "<group>"; };
+		57548D7F1535E5630084C420 /* NSManagedObjectContext+VPPCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+VPPCoreData.m"; sourceTree = "<group>"; };
+		57548D801535E5630084C420 /* NSSortDescriptor+VPPCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSortDescriptor+VPPCoreData.h"; sourceTree = "<group>"; };
+		57548D811535E5630084C420 /* NSSortDescriptor+VPPCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSortDescriptor+VPPCoreData.m"; sourceTree = "<group>"; };
+		57548D821535E5630084C420 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		57548D831535E5630084C420 /* VPPCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPPCoreData.h; sourceTree = "<group>"; };
+		57548D841535E5630084C420 /* VPPCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPPCoreData.m; sourceTree = "<group>"; };
+		57548D851535E5630084C420 /* VPPCoreDataActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPPCoreDataActiveRecord.h; sourceTree = "<group>"; };
+		57548D861535E5630084C420 /* VPPCoreDataActiveRecordProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPPCoreDataActiveRecordProtocol.h; sourceTree = "<group>"; };
 		57816AAA14EA5A3400DD1052 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		57816AB214EA7F0600DD1052 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		57816AB414EA7F3D00DD1052 /* Quote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quote.h; sourceTree = "<group>"; };
@@ -40,9 +54,6 @@
 		57F4A1E514EA586A0048D821 /* VPPCoreDataExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VPPCoreDataExample-Prefix.pch"; sourceTree = "<group>"; };
 		57F4A1E614EA586A0048D821 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57F4A1E714EA586A0048D821 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		57F4A1F314EA58AF0048D821 /* VPPCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPPCoreData.h; sourceTree = "<group>"; };
-		57F4A1F414EA58AF0048D821 /* VPPCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPPCoreData.m; sourceTree = "<group>"; };
-		57F4A1FB14EA58ED0048D821 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +71,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57548D7A1535E5630084C420 /* VPPCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				57548D7B1535E5630084C420 /* Categories */,
+				57548D821535E5630084C420 /* SynthesizeSingleton.h */,
+				57548D831535E5630084C420 /* VPPCoreData.h */,
+				57548D841535E5630084C420 /* VPPCoreData.m */,
+				57548D851535E5630084C420 /* VPPCoreDataActiveRecord.h */,
+				57548D861535E5630084C420 /* VPPCoreDataActiveRecordProtocol.h */,
+			);
+			path = VPPCoreData;
+			sourceTree = SOURCE_ROOT;
+		};
+		57548D7B1535E5630084C420 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				57548D7C1535E5630084C420 /* NSManagedObject+VPPCoreData.h */,
+				57548D7D1535E5630084C420 /* NSManagedObject+VPPCoreData.m */,
+				57548D7E1535E5630084C420 /* NSManagedObjectContext+VPPCoreData.h */,
+				57548D7F1535E5630084C420 /* NSManagedObjectContext+VPPCoreData.m */,
+				57548D801535E5630084C420 /* NSSortDescriptor+VPPCoreData.h */,
+				57548D811535E5630084C420 /* NSSortDescriptor+VPPCoreData.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		57816AB014EA7F0600DD1052 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,8 +140,8 @@
 		57F4A1DD14EA586A0048D821 /* VPPCoreDataExample */ = {
 			isa = PBXGroup;
 			children = (
+				57548D7A1535E5630084C420 /* VPPCoreData */,
 				57816AB014EA7F0600DD1052 /* Model */,
-				57F4A1FC14EA59010048D821 /* Libraries */,
 				57F4A1E614EA586A0048D821 /* AppDelegate.h */,
 				57F4A1E714EA586A0048D821 /* AppDelegate.m */,
 				57F4A1DE14EA586A0048D821 /* Supporting Files */,
@@ -123,24 +160,6 @@
 				57F4A1E514EA586A0048D821 /* VPPCoreDataExample-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		57F4A1F214EA58AF0048D821 /* VPPCoreData */ = {
-			isa = PBXGroup;
-			children = (
-				57F4A1FB14EA58ED0048D821 /* SynthesizeSingleton.h */,
-				57F4A1F314EA58AF0048D821 /* VPPCoreData.h */,
-				57F4A1F414EA58AF0048D821 /* VPPCoreData.m */,
-			);
-			path = VPPCoreData;
-			sourceTree = SOURCE_ROOT;
-		};
-		57F4A1FC14EA59010048D821 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				57F4A1F214EA58AF0048D821 /* VPPCoreData */,
-			);
-			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,11 +225,14 @@
 			files = (
 				57F4A1E414EA586A0048D821 /* main.m in Sources */,
 				57F4A1E814EA586A0048D821 /* AppDelegate.m in Sources */,
-				57F4A1F514EA58AF0048D821 /* VPPCoreData.m in Sources */,
 				57816AB314EA7F0600DD1052 /* Model.xcdatamodeld in Sources */,
 				57816AB614EA7F3D00DD1052 /* Quote.m in Sources */,
 				57816AB914EA7F5C00DD1052 /* Service.m in Sources */,
 				57816ABC14EA815200DD1052 /* QuotesViewController.m in Sources */,
+				57548D871535E5630084C420 /* NSManagedObject+VPPCoreData.m in Sources */,
+				57548D881535E5630084C420 /* NSManagedObjectContext+VPPCoreData.m in Sources */,
+				57548D891535E5630084C420 /* NSSortDescriptor+VPPCoreData.m in Sources */,
+				57548D8A1535E5630084C420 /* VPPCoreData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
