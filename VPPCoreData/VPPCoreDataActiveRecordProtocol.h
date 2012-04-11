@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@protocol VPPCoreDataActiveRecordManagedObject
+@protocol VPPCoreDataActiveRecordManagedObjectContext
 
 
 - (id) create;

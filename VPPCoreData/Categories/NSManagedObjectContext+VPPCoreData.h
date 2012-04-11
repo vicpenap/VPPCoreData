@@ -10,6 +10,6 @@
 #import "VPPCoreDataActiveRecordProtocol.h"
 
 
-@interface NSManagedObjectContext (VPPCoreData) <VPPCoreDataActiveRecordManagedObject>
+@interface NSManagedObjectContext (VPPCoreData) <VPPCoreDataActiveRecordManagedObjectContext>
 
 @end
