@@ -9,7 +9,7 @@
 #import <CoreData/CoreData.h>
 #import "VPPCoreDataActiveRecordProtocol.h"
 
-@interface NSManagedObject (VPPCoreData) <VPPCoreDataActiveRecord>
+@interface NSManagedObject (VPPCDActiveRecord) <VPPCoreDataActiveRecord>
 
 + (NSManagedObjectContext *) moc;
 + (NSManagedObjectContext *) moc:(NSManagedObjectContext *)moc;

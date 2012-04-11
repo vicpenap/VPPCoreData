@@ -26,9 +26,6 @@
 - (int) countAll;
 - (int) countBy; 
 
-//TODO: implement
-- (void) save;
-
 - (void) remove;
 
 
@@ -53,9 +50,6 @@
 //TODO: implement
 + (int) countAll;
 + (int) countBy; 
-
-//TODO: implement
-- (void) save; 
 
 - (void) remove;
 

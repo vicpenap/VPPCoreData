@@ -30,6 +30,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "NSSortDescriptor+VPPCoreData.h"
+#import "NSManagedObjectContext+VPPCoreData.h"
 
 #define kVPPCoreDataDBFilename @"model"
 

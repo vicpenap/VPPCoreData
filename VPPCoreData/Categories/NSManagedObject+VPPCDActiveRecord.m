@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "NSManagedObjectContext+VPPCoreData.h"
-#import "NSManagedObject+VPPCoreData.h"
+#import "NSManagedObjectContext+VPPCDActiveRecord.h"
+#import "NSManagedObject+VPPCDActiveRecord.h"
 #import "VPPCoreData.h"
 #import <objc/runtime.h>
 
@@ -42,7 +42,7 @@ const char objectKey;
 @end
 
 
-@implementation NSManagedObject (VPPCoreData)
+@implementation NSManagedObject (VPPCDActiveRecord)
 
 + (NSString *) className 
 {
@@ -110,11 +110,6 @@ const char objectKey;
 + (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit:(int)limit
 {
     return [[self mainMOC] findBy:predicate orderBy:orderBy offset:offset limit:limit];
-}
-
-- (void) save
-{
-    [[self mainMOC] save];
 }
 
 - (void) remove 
