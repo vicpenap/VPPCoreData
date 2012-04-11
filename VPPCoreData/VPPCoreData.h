@@ -29,7 +29,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-
+#import "NSSortDescriptor+VPPCoreData.h"
 
 #define kVPPCoreDataDBFilename @"model"
 
@@ -109,6 +109,7 @@
     NSManagedObjectContext *mainContext_;
     NSPersistentStoreCoordinator *persistentStoreCoordinator_;
     NSManagedObjectModel *managedObjectModel_;
+    NSString *persistentStoreType_;
 }
 
 /** @name Accessing to the singleton instance */
@@ -157,6 +158,36 @@
 - (int) countObjectsForEntity:(NSString *)entity 
                    filteredBy:(NSPredicate*)predicateOrNil;
 
+
+/** Returns all objects for the given entity that match the given predicate. 
+ 
+ @param entity The objects' entity.
+ @param orderBy An SQL-like order-by clausule. For example: `name asc, date desc`.
+ @param predicateOrNil the predicate to filter the results.
+ */
+- (NSArray *) allObjectsForEntity:(NSString *)entity 
+                          orderBy:(NSString *)orderBy
+                       filteredBy:(NSPredicate *)predicateOrNil;
+
+
+/** Returns all objects for the given entity that match the given predicate. 
+ 
+ @param entity The objects' entity.
+ @param sortDescriptors An array of `NSSortDescriptor`.
+ @param predicateOrNil the predicate to filter the results.
+ */
+- (NSArray *) allObjectsForEntity:(NSString *)entity 
+                  sortDescriptors:(NSArray *)sortDescriptors
+                       filteredBy:(NSPredicate *)predicateOrNil;
+
+
+/** Returns all objects for the given entity that match the given predicate, 
+ ordered by the given attribute. */
+- (NSArray *) allObjectsForEntity:(NSString *)entity 
+               orderedByAttribute:(NSString *)attributeOrNil 
+                        ascending:(BOOL)ascending
+                       filteredBy:(NSPredicate *)predicateOrNil;
+
 /** Returns a page of objects for the given entity that match the given predicate. 
  
  @param entity The objects' entity.
@@ -174,12 +205,20 @@
                     fetchLimit:(int)fetchLimit 
                         offset:(int)offset;
 
-/** Returns all objects for the given entity that match the given predicate, 
- ordered by the given attribute. */
-- (NSArray *) allObjectsForEntity:(NSString *)entity 
-               orderedByAttribute:(NSString *)attributeOrNil 
-                        ascending:(BOOL)ascending
-                       filteredBy:(NSPredicate *)predicateOrNil;
+/** Returns a page of objects for the given entity that match the given predicate. 
+ 
+ @param entity The objects' entity.
+ @param orderBy An SQL-like order-by clausule. For example: `name asc, date desc`.
+ @param predicateOrNil the predicate to filter the results.
+ @param fetchLimit the max amount of objects to retrieve.
+ @param offset the page's offset.
+ */
+- (NSArray *) objectsForEntity:(NSString *)entity 
+                       orderBy:(NSArray *)orderBy
+                    filteredBy:(NSPredicate*)predicateOrNil 
+                    fetchLimit:(int)fetchLimit 
+                        offset:(int)offset;
+
 
 /** Returns a page of objects for the given entity that match the given predicate. 
  
@@ -195,15 +234,6 @@
                     fetchLimit:(int)fetchLimit 
                         offset:(int)offset;
 
-/** Returns all objects for the given entity that match the given predicate. 
- 
- @param entity The objects' entity.
- @param sortDescriptors An array of `NSSortDescriptor`.
- @param predicateOrNil the predicate to filter the results.
- */
-- (NSArray *) allObjectsForEntity:(NSString *)entity 
-                  sortDescriptors:(NSArray *)sortDescriptors
-                       filteredBy:(NSPredicate *)predicateOrNil;
 
 /** Removes all objects for the given entity. */
 - (void) deleteAllObjectsFromEntity:(NSString *)entity;
@@ -289,20 +319,6 @@
                    offset:(int)offset 
                completion:(void (^) (NSArray *objects))block;
 
-/** Fetches in background all objects for the given entity that match the given 
- predicate, ordered by the given attribute and passes them through the completion 
- block.
- 
- The completion block is launched in main thread. The returned entities are
- re-fetched with main managed object context, so it is safe to use them in main
- thread.
- */
-- (void) allObjectsForEntity:(NSString *)entity 
-          orderedByAttribute:(NSString *)attributeOrNil 
-                   ascending:(BOOL)ascending
-                  filteredBy:(NSPredicate *)predicateOrNil 
-                  completion:(void (^) (NSArray *objects))block;
-
 
 /** Fetches in background a page of objects for the given entity that match the 
  given predicate and passes them through the completion block. 
@@ -325,6 +341,45 @@
                completion:(void (^) (NSArray *objects))block;
 
 
+
+
+/** Fetches in background a page of objects for the given entity that match the 
+ given predicate and passes them through the completion block. 
+ 
+ The completion block is launched in main thread. The returned entities are
+ re-fetched with main managed object context, so it is safe to use them in main
+ thread.
+ 
+ @param entity The objects' entity.
+ @param orderBy An SQL-like order-by clausule. For example: `name asc, date desc`.
+ @param predicateOrNil the predicate to filter the results.
+ @param fetchLimit the max amount of objects to retrieve.
+ @param offset the page's offset.
+ */
+- (void) objectsForEntity:(NSString *)entity 
+                  orderBy:(NSString *)orderBy
+               filteredBy:(NSPredicate*)predicateOrNil 
+               fetchLimit:(int)fetchLimit 
+                   offset:(int)offset 
+               completion:(void (^) (NSArray *objects))block;
+
+
+
+
+/** Fetches in background all objects for the given entity that match the given 
+ predicate, ordered by the given attribute and passes them through the completion 
+ block.
+ 
+ The completion block is launched in main thread. The returned entities are
+ re-fetched with main managed object context, so it is safe to use them in main
+ thread.
+ */
+- (void) allObjectsForEntity:(NSString *)entity 
+          orderedByAttribute:(NSString *)attributeOrNil 
+                   ascending:(BOOL)ascending
+                  filteredBy:(NSPredicate *)predicateOrNil 
+                  completion:(void (^) (NSArray *objects))block;
+
 /** Gets in background all objects for the given entity that match the given 
  predicate and passes them through the completion block. 
  
@@ -340,6 +395,23 @@
              sortDescriptors:(NSArray *)sortDescriptors
                   filteredBy:(NSPredicate *)predicateOrNil 
                   completion:(void (^) (NSArray *objects))block;
+
+/** Gets in background all objects for the given entity that match the given 
+ predicate and passes them through the completion block. 
+ 
+ The completion block is launched in main thread. The returned entities are
+ re-fetched with main managed object context, so it is safe to use them in main
+ thread.
+ 
+ @param entity The objects' entity.
+ @param orderBy An SQL-like order-by clausule. For example: `name asc, date desc`.
+ @param predicateOrNil the predicate to filter the results.
+ */
+- (void) allObjectsForEntity:(NSString *)entity 
+                     orderBy:(NSString *)orderBy
+                  filteredBy:(NSPredicate *)predicateOrNil 
+                  completion:(void (^) (NSArray *objects))block;
+
 
 
 @end
@@ -373,6 +445,21 @@
                        filteredBy:(NSPredicate *)predicateOrNil 
              managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
+/** Returns all objects for the given entity that match the given predicate, 
+ ordered by the given attribute using the given managed object context. */
+- (NSArray *) allObjectsForEntity:(NSString *)entity
+                  sortDescriptors:(NSArray *)sortDescriptors
+                       filteredBy:(NSPredicate *)predicateOrNil 
+             managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
+/** Returns all objects for the given entity that match the given predicate, 
+ ordered by the given order-by string using the given managed object context. */
+- (NSArray *) allObjectsForEntity:(NSString *)entity
+                          orderBy:(NSString *)orderBy
+                       filteredBy:(NSPredicate *)predicateOrNil 
+             managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
+
 /** Returns a page of objects for the given entity that match the given predicate
  using the given managed object context. 
  
@@ -393,12 +480,6 @@
                         offset:(int)offset
           managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
-/** Returns all objects for the given entity that match the given predicate, 
- ordered by the given attribute using the given managed object context. */
-- (NSArray *) allObjectsForEntity:(NSString *)entity
-                  sortDescriptors:(NSArray *)sortDescriptors
-                       filteredBy:(NSPredicate *)predicateOrNil 
-             managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 
 /** Returns a page of objects for the given entity that match the given predicate
@@ -412,6 +493,22 @@
  */
 - (NSArray *) objectsForEntity:(NSString *)entity 
                sortDescriptors:(NSArray *)sortDescriptors
+                    filteredBy:(NSPredicate *)predicateOrNil 
+                    fetchLimit:(int)fetchLimit 
+                        offset:(int)offset
+          managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
+/** Returns a page of objects for the given entity that match the given predicate
+ using the given managed object context. 
+ 
+ @param entity The objects' entity.
+ @param orderBy An SQL-like order-by clausule. For example: `name asc, date desc`.
+ @param predicateOrNil the predicate to filter the results.
+ @param fetchLimit the max amount of objects to retrieve.
+ @param offset the page's offset.
+ */
+- (NSArray *) objectsForEntity:(NSString *)entity 
+                       orderBy:(NSString *)orderBy
                     filteredBy:(NSPredicate *)predicateOrNil 
                     fetchLimit:(int)fetchLimit 
                         offset:(int)offset
@@ -478,6 +575,20 @@
  **before** using any of the provided query methods. 
  */
 @property (nonatomic, retain) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+
+/** Specifies the persisten store type to use.
+ 
+ Persistent store types supported by Core Data:
+ 
+ - NSSQLiteStoreType
+ - NSXMLStoreType
+ - NSBinaryStoreType
+ - NSInMemoryStoreType
+ 
+ By default, NSSQLiteStoreType.
+*/
+@property (nonatomic, retain) NSString *persistentStoreType;
 
 @end
 
