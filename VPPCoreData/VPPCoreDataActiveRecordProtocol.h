@@ -25,7 +25,7 @@
 - (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
 - (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit:(int)limit;
 
-- (int) countAll;
+- (int) count;
 - (int) countBy:(NSPredicate *)predicate; 
 
 - (void) remove;
@@ -53,7 +53,7 @@
 + (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
 + (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit:(int)limit;
 
-+ (int) countAll;
++ (int) count;
 + (int) countBy:(NSPredicate *)predicate; 
 
 - (void) remove;

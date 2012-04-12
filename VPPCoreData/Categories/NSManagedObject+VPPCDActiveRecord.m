@@ -101,7 +101,7 @@ const char objectKey;
 
 + (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy
 {
-    return [[self mainMOC] findBy:predicate orderBy:orderBy];
+    return [[self mainMOC] firstBy:predicate orderBy:orderBy];
 }
 
 + (NSArray *) all 
@@ -129,9 +129,9 @@ const char objectKey;
     return [[self mainMOC] findBy:predicate orderBy:orderBy offset:offset limit:limit];
 }
 
-+ (int) countAll
++ (int) count
 {
-    return [[self mainMOC] countAll];
+    return [[self mainMOC] count];
 }
 
 + (int) countBy:(NSPredicate *)predicate

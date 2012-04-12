@@ -50,10 +50,16 @@ extern const char objectKey;
     return [[VPPCoreData sharedInstance] objectWithExistingID:[self getObject] managedObjectContext:self];
 }
 
-// TODO: update this call to use a future first sorted from vppcoredata
 - (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy
 {
-    return [[VPPCoreData sharedInstance] findObjectFromEntity:[self getClassName] withPredicate:predicate managedObjectContext:self];
+    NSArray *objects = [[VPPCoreData sharedInstance] objectsForEntity:[self getClassName] orderBy:orderBy filteredBy:predicate fetchLimit:1 offset:0 managedObjectContext:self];
+    
+    if ([objects count] > 0) 
+    {
+        return [objects objectAtIndex:0];
+    }
+    
+    return nil;
 }
 
 - (NSArray *) all 
@@ -63,7 +69,7 @@ extern const char objectKey;
 
 - (NSArray *) findBy:(NSPredicate *)predicate
 {
-    return [[VPPCoreData sharedInstance] allObjectsForEntity:[self getClassName] orderBy:nil filteredBy:predicate managedObjectContext:self];
+    return [self findBy:predicate orderBy:nil];
 }
 
 
@@ -82,7 +88,7 @@ extern const char objectKey;
     return [[VPPCoreData sharedInstance] objectsForEntity:[self getClassName] orderBy:orderBy filteredBy:predicate fetchLimit:limit offset:offset managedObjectContext:self];
 }
 
-- (int) countAll 
+- (int) count
 {
     return [self countBy:nil];
 }
