@@ -1,6 +1,6 @@
 //
 //  NSManagedObject+VPPCoreData.m
-//  Wiktionary
+//  VPPLibraries
 //
 //  Created by Víctor on 28/03/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
