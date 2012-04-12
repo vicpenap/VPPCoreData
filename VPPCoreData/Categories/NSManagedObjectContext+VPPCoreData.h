@@ -46,4 +46,8 @@
  obtained from a different managed object context. */
 - (id) fetch:(id)object;
 
+/** Returns a new autoreleased managed object context already configured with the 
+ persistent store coordinator. */
++ (NSManagedObjectContext *) create;
+
 @end

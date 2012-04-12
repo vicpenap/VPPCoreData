@@ -47,5 +47,9 @@
     return [[VPPCoreData sharedInstance] objectWithExistingID:object managedObjectContext:self];
 }
 
++ (NSManagedObjectContext *) create 
+{
+    return [[VPPCoreData sharedInstance] createManagedObjectContext];
+}
 
 @end

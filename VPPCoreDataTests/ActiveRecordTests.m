@@ -60,6 +60,7 @@
     
     STAssertEqualObjects(first, qFirst, @"Objects do not match");
 }
+
 - (NSArray *) createPrefix:(NSString *)prefix amount:(int)amount
 {
     NSMutableArray *quotes = [NSMutableArray array];
@@ -139,7 +140,7 @@
     STAssertTrue(count == retrievedCount, @"Counts do not match");
 }
 
-- (void) remove 
+- (void) testRemove 
 {
     Quote *q = [Quote create];
     q.quote = @"Test";
@@ -154,6 +155,27 @@
     count = 3;
     retrievedCount = [Quote count];
     STAssertTrue(count == retrievedCount, @"Counts do not match");
+}
+
+- (void) testDifferentMocs
+{
+    NSManagedObjectContext *mmoc = [NSManagedObjectContext create];
+    
+    Quote *qFirst = [[Quote moc:mmoc] create];
+    qFirst.quote = @"a";
+    
+    Quote *q = [[Quote moc:mmoc] create];
+    q.quote = @"b";
+    
+    q = [[Quote moc:mmoc] create];
+    q.quote = @"c";
+    
+    [mmoc saveChanges:NULL];
+    
+    Quote *first = [Quote firstBy:nil orderBy:@"quote"];
+    
+    qFirst = [qFirst refetch];
+    STAssertEqualObjects(first, qFirst, @"Objects do not match");
 }
 
 

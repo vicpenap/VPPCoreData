@@ -68,7 +68,7 @@ extern const char objectKey;
 
 - (id) refetch
 {
-    return [[VPPCoreData sharedInstance] objectWithExistingID:[self getObject] managedObjectContext:self];
+    return [self fetch:[self getObject]];
 }
 
 - (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy

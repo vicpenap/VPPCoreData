@@ -79,7 +79,7 @@ const char objectKey;
 
 + (NSManagedObjectContext *) moc 
 {
-    NSManagedObjectContext *moc = [[VPPCoreData sharedInstance] createManagedObjectContext];
+    NSManagedObjectContext *moc = [NSManagedObjectContext create];
     return [self moc:moc];
 }
 
@@ -91,18 +91,20 @@ const char objectKey;
 
 - (NSManagedObjectContext *) moc 
 {
-    return [[self class] moc];
+    NSManagedObjectContext *moc = [NSManagedObjectContext create];
+    return [self moc:moc];
 }
 
 
 - (NSManagedObjectContext *) moc:(NSManagedObjectContext *)moc
 {
+    [moc setObject:self];
     return [[self class] moc:moc];
 }
 
 - (NSManagedObjectContext *) mainMOC 
 {
-    return [[self class] moc:[[VPPCoreData sharedInstance] mainContext]];
+    return [self moc:[[VPPCoreData sharedInstance] mainContext]];
 }
 
 
