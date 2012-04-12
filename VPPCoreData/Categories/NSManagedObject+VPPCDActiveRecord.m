@@ -63,7 +63,8 @@ const char objectKey;
 }
 
 
-+ (NSManagedObjectContext *) mainMOC {
++ (NSManagedObjectContext *) mainMOC
+{
     return [self moc:[[VPPCoreData sharedInstance] mainContext]];
 }
 
@@ -78,7 +79,8 @@ const char objectKey;
     return [[self class] moc:moc];
 }
 
-- (NSManagedObjectContext *) mainMOC {
+- (NSManagedObjectContext *) mainMOC 
+{
     return [[self class] moc:[[VPPCoreData sharedInstance] mainContext]];
 }
 
@@ -90,6 +92,12 @@ const char objectKey;
 {
     return [[self mainMOC] create];
 }
+
+- (id) refetch 
+{
+    return [[self mainMOC] refetch];
+}
+
 
 + (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy
 {
@@ -103,7 +111,7 @@ const char objectKey;
 
 + (NSArray *) findBy:(NSPredicate *)predicate
 {
-    return [[self mainMOC] findBy:predicate orderBy:nil];
+    return [[self mainMOC] findBy:predicate];
 }
 
 + (NSArray *) allOrderBy:(NSString *)orderBy
@@ -121,12 +129,24 @@ const char objectKey;
     return [[self mainMOC] findBy:predicate orderBy:orderBy offset:offset limit:limit];
 }
 
++ (int) countAll
+{
+    return [[self mainMOC] countAll];
+}
+
++ (int) countBy:(NSPredicate *)predicate
+{
+    return [[self mainMOC] countBy:predicate];
+}
+
 - (void) remove 
 {
     [[self mainMOC] remove];
 }
 
-
-
++ (void) removeAll
+{
+    [[self mainMOC] removeAll];
+}
 
 @end

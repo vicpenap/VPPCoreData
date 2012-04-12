@@ -14,7 +14,6 @@
 
 - (id) create;
 
-//TODO: implement
 - (id) refetch;
 
 - (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
@@ -26,11 +25,11 @@
 - (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
 - (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit:(int)limit;
 
-//TODO: implement
 - (int) countAll;
-- (int) countBy; 
+- (int) countBy:(NSPredicate *)predicate; 
 
 - (void) remove;
+- (void) removeAll;
 
 
 @end
@@ -43,7 +42,6 @@
 
 + (id) create;
 
-//TODO: implement
 - (id) refetch;
 
 + (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
@@ -55,11 +53,11 @@
 + (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
 + (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit:(int)limit;
 
-//TODO: implement
 + (int) countAll;
-+ (int) countBy; 
++ (int) countBy:(NSPredicate *)predicate; 
 
 - (void) remove;
++ (void) removeAll;
 
 
 @end

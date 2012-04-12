@@ -45,6 +45,11 @@ extern const char objectKey;
     return [[VPPCoreData sharedInstance] getNewObjectForEntity:[self getClassName] managedObjectContext:self];
 }
 
+- (id) refetch
+{
+    return [[VPPCoreData sharedInstance] objectWithExistingID:[self getObject] managedObjectContext:self];
+}
+
 // TODO: update this call to use a future first sorted from vppcoredata
 - (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy
 {
@@ -53,7 +58,7 @@ extern const char objectKey;
 
 - (NSArray *) all 
 {
-    return [[VPPCoreData sharedInstance] allObjectsForEntity:[self getClassName] sortDescriptors:nil filteredBy:nil managedObjectContext:self];
+    return [self findBy:nil orderBy:nil];
 }
 
 - (NSArray *) findBy:(NSPredicate *)predicate
@@ -69,7 +74,7 @@ extern const char objectKey;
 
 - (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy
 {
-    return [[VPPCoreData sharedInstance] allObjectsForEntity:[self getClassName] orderBy:orderBy filteredBy:predicate managedObjectContext:self];
+    return [self findBy:predicate orderBy:orderBy offset:0 limit:0];
 }
 
 - (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit:(int)limit
@@ -77,11 +82,25 @@ extern const char objectKey;
     return [[VPPCoreData sharedInstance] objectsForEntity:[self getClassName] orderBy:orderBy filteredBy:predicate fetchLimit:limit offset:offset managedObjectContext:self];
 }
 
+- (int) countAll 
+{
+    return [self countBy:nil];
+}
+
+- (int) countBy:(NSPredicate *)predicate
+{
+    return [[VPPCoreData sharedInstance] countObjectsForEntity:[self getClassName] filteredBy:predicate managedObjectContext:self];    
+}
+
 - (void) remove 
 {
     [[VPPCoreData sharedInstance] deleteObject:[self getObject] managedObjectContext:self];
 }
 
+- (void) removeAll
+{
+    [[VPPCoreData sharedInstance] deleteAllObjectsFromEntity:[self getClassName] managedObjectContext:self];
+}
 
 
 @end

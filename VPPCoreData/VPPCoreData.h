@@ -471,7 +471,7 @@
  descending (when ascending is NO).
  @param predicateOrNil the predicate to filter the results.
  @param fetchLimit the max amount of objects to retrieve.
- @param offset the page's offset.
+ @param offset the first item to retrieve.
  @param managedObjectContext the managed object context to use.
  */
 - (NSArray *) objectsForEntity:(NSString *)entity 
@@ -491,7 +491,7 @@
  @param sortDescriptors An array of `NSSortDescriptor`.
  @param predicateOrNil the predicate to filter the results.
  @param fetchLimit the max amount of objects to retrieve.
- @param offset the page's offset.
+ @param offset the first item to retrieve.
  */
 - (NSArray *) objectsForEntity:(NSString *)entity 
                sortDescriptors:(NSArray *)sortDescriptors
@@ -507,7 +507,7 @@
  @param orderBy An SQL-like order-by clausule. For example: `name asc, date desc`.
  @param predicateOrNil the predicate to filter the results.
  @param fetchLimit the max amount of objects to retrieve.
- @param offset the page's offset.
+ @param offset the first item to retrieve.
  */
 - (NSArray *) objectsForEntity:(NSString *)entity 
                        orderBy:(NSString *)orderBy
