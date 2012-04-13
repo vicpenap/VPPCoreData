@@ -17,6 +17,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        self.title = @"Plain Objects";
     }
     return self;
 }
@@ -32,6 +33,7 @@
 - (void) loadQuotes {
     loading = YES;
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    
     
     [Service allQuotesCompletion:^(NSArray *data) {
         loading = NO;
@@ -90,8 +92,8 @@
     [q release];
 }
 
-- (void) addTenQoutes {
-    [self addQuotes:10];
+- (void) addOneQuote {
+    [self addQuotes:1];
 }
 
 - (void) addTwoThousandQuotes {
@@ -123,7 +125,7 @@
     
     NSMutableArray *buttons = [NSMutableArray array];
     [buttons addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(remove)] autorelease]];
-    [buttons addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addQuotes)] autorelease]];
+    [buttons addObject:[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addOneQuote)] autorelease]];
     self.navigationItem.rightBarButtonItems = buttons;
     
     self.segmentedControl = [[[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"All", @"Even", @"Odd", nil]] autorelease];
@@ -153,6 +155,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self segmentedControlChanged:self.segmentedControl];    
 }
 
 - (void)viewWillDisappear:(BOOL)animated

@@ -91,24 +91,25 @@
         return persistentStoreCoordinator_;
     }
     
-    
-    NSString *storePath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite",self.dbFilename]];
-    NSURL *storeURL = [NSURL fileURLWithPath:storePath];
-    
-    if (self.initialDBFilename) {
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        if (![fileManager fileExistsAtPath:storePath]) {
-            NSString *initialStorePath = [[NSBundle mainBundle] pathForResource:self.initialDBFilename ofType:@"sqlite"];
-            if (initialStorePath) {
-                [fileManager copyItemAtPath:initialStorePath toPath:storePath error:NULL];
+    NSURL *storeURL = nil;
+    if ([NSSQLiteStoreType isEqualToString:self.persistentStoreType]) {
+        NSString *storePath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite",self.dbFilename]];
+        storeURL = [NSURL fileURLWithPath:storePath];
+        
+        if (self.initialDBFilename) {
+            NSFileManager *fileManager = [NSFileManager defaultManager];
+            if (![fileManager fileExistsAtPath:storePath]) {
+                NSString *initialStorePath = [[NSBundle mainBundle] pathForResource:self.initialDBFilename ofType:@"sqlite"];
+                if (initialStorePath) {
+                    [fileManager copyItemAtPath:initialStorePath toPath:storePath error:NULL];
+                }
             }
         }
     }
-    
     NSError *error = nil;
     
     persistentStoreCoordinator_ = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![persistentStoreCoordinator_ addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![persistentStoreCoordinator_ addPersistentStoreWithType:self.persistentStoreType configuration:nil URL:storeURL options:nil error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -138,6 +139,23 @@
     
     return persistentStoreCoordinator_;
 }
+
+- (NSString *) persistentStoreType {
+    if (!persistentStoreType_) {
+        self.persistentStoreType = NSSQLiteStoreType;
+    }
+    
+    return persistentStoreType_;
+}
+
+- (void) setPersistentStoreType:(NSString *)persistentStoreType {
+    [persistentStoreType retain];
+    if (persistentStoreType_ != nil) {
+        [persistentStoreType_ release];
+    }
+    persistentStoreType_ = persistentStoreType;
+}
+
 
 
 - (void)mergeChanges:(NSNotification *)notification
@@ -246,6 +264,17 @@
 	return result;
 }
 
+- (NSArray *) allObjectsForEntity:(NSString *)entity
+                          orderBy:(NSString *)orderBy
+                       filteredBy:(NSPredicate *)predicateOrNil 
+             managedObjectContext:(NSManagedObjectContext *)managedObjectContext 
+{
+    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString:orderBy];
+    
+    return [self objectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil fetchLimit:0 offset:0 managedObjectContext:managedObjectContext];
+}
+
+
 - (NSArray *) allObjectsForEntity:(NSString *)entity 
                orderedByAttribute:(NSString *)attributeOrNil 
                         ascending:(BOOL)ascending
@@ -280,6 +309,19 @@
     
     return [self objectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil fetchLimit:0 offset:0 managedObjectContext:managedObjectContext];
 }
+
+- (NSArray *) objectsForEntity:(NSString *)entity 
+                       orderBy:(NSString *)orderBy
+                    filteredBy:(NSPredicate *)predicateOrNil 
+                    fetchLimit:(int)fetchLimit 
+                        offset:(int)offset
+          managedObjectContext:(NSManagedObjectContext *)managedObjectContext 
+{
+    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString:orderBy];
+
+    return [self objectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil fetchLimit:fetchLimit offset:offset managedObjectContext:managedObjectContext];
+}
+
 /**
  Returns an array with all the objects for the given entity name sorted by the given attribute
  */
@@ -327,7 +369,8 @@
 
 - (id) findObjectFromEntity:(NSString *)entity 
               withPredicate:(NSPredicate *)predicate
-       managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+       managedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
 	NSArray * tmp;
 	
 	if ([tmp = [self objectsForEntity:entity
@@ -336,7 +379,8 @@
                            filteredBy:predicate
                            fetchLimit:1
                                offset:0
-                 managedObjectContext:managedObjectContext] count] != 0) {
+                 managedObjectContext:managedObjectContext] count] != 0)
+    {
 		return [tmp objectAtIndex:0];
 	}
 	return nil;
@@ -408,6 +452,7 @@
 @implementation VPPCoreData
 @synthesize dbFilename;
 @synthesize initialDBFilename;
+
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
 
@@ -509,6 +554,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
     return [self objectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil fetchLimit:fetchLimit offset:offset managedObjectContext:self.mainContext];
 }
 
+- (NSArray *) objectsForEntity:(NSString *)entity 
+                       orderBy:(NSString *)orderBy
+                    filteredBy:(NSPredicate*)predicateOrNil 
+                    fetchLimit:(int)fetchLimit 
+                        offset:(int)offset
+{
+    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString:orderBy];
+    
+    return [self objectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil fetchLimit:fetchLimit offset:offset managedObjectContext:self.mainContext];
+}
+
+
 - (NSArray *) allObjectsForEntity:(NSString *)entity 
                   sortDescriptors:(NSArray *)sortDescriptors
                        filteredBy:(NSPredicate *)predicateOrNil {
@@ -516,6 +573,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
     return [self allObjectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil managedObjectContext:self.mainContext];
     
 }
+
+- (NSArray *) allObjectsForEntity:(NSString *)entity 
+                          orderBy:(NSString *)orderBy
+                       filteredBy:(NSPredicate *)predicateOrNil
+{
+    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString:orderBy];
+    
+    return [self allObjectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil managedObjectContext:self.mainContext];
+    
+}
+
 
 - (void) deleteAllObjectsFromEntity:(NSString *)entity {
     
@@ -641,6 +709,21 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
     [q release];
 }
 
+- (void) objectsForEntity:(NSString *)entity 
+                  orderBy:(NSString *)orderBy
+               filteredBy:(NSPredicate*)predicateOrNil 
+               fetchLimit:(int)fetchLimit 
+                   offset:(int)offset 
+               completion:(void (^) (NSArray *objects))block
+{
+ 
+    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString:orderBy];
+    
+    [self objectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil fetchLimit:fetchLimit offset:offset completion:block];
+}
+
+
+
 - (void) allObjectsForEntity:(NSString *)entity 
              sortDescriptors:(NSArray *)sortDescriptors
                   filteredBy:(NSPredicate *)predicateOrNil 
@@ -656,6 +739,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
     }];
     [q release];
 }
+
+- (void) allObjectsForEntity:(NSString *)entity 
+                     orderBy:(NSString *)orderBy
+                  filteredBy:(NSPredicate *)predicateOrNil 
+                  completion:(void (^) (NSArray *objects))block 
+{
+
+    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString:orderBy];
+
+    [self allObjectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil completion:block];
+}
+
 
 
 @end

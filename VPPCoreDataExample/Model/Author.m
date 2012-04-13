@@ -1,19 +1,18 @@
 //
-//  Quote.m
+//  Author.m
 //  VPPCoreDataExample
 //
 //  Created by Víctor on 12/04/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Quote.h"
 #import "Author.h"
+#import "Quote.h"
 
 
-@implementation Quote
+@implementation Author
 
-@dynamic date;
-@dynamic quote;
-@dynamic author;
+@dynamic name;
+@dynamic quotes;
 
 @end
