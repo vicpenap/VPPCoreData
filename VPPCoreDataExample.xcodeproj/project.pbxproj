@@ -501,6 +501,7 @@
 				575B9C8E1536C5C40098B1E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57F4A1CD14EA586A0048D821 /* Build configuration list for PBXProject "VPPCoreDataExample" */ = {
 			isa = XCConfigurationList;

@@ -50,4 +50,7 @@
  persistent store coordinator. */
 + (NSManagedObjectContext *) create;
 
+/** Returns the main managed object context. */
++ (NSManagedObjectContext *) main;
+
 @end

@@ -155,6 +155,9 @@
     count = 3;
     retrievedCount = [Quote count];
     STAssertTrue(count == retrievedCount, @"Counts do not match");
+    
+    [Quote removeAll];
+    STAssertTrue(0 == [Quote count], @"Objects haven't been removed");
 }
 
 - (void) testDifferentMocs

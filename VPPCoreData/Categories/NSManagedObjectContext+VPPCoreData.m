@@ -52,4 +52,10 @@
     return [[VPPCoreData sharedInstance] createManagedObjectContext];
 }
 
++ (NSManagedObjectContext *) main
+{
+    return [[VPPCoreData sharedInstance] mainContext];
+}
+
+
 @end
