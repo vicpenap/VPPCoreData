@@ -164,9 +164,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_DifferentManagedObjectContext Methods">DifferentManagedObjectContext Methods</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Customizing Methods">Customizing Methods</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Background Methods">Background Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Customizing Methods">Customizing Methods</a></span></li>
 	
 </ul></li>
 
@@ -669,35 +669,6 @@ managed object context.</p></span>
 						</ul>
 						
 						
-						<a title="Customizing Methods" name="task_Customizing Methods"></a>
-						<h3 class="subsubtitle task-title">Customizing Methods</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/managedObjectModel">&nbsp;&nbsp;managedObjectModel</a></code>
-		<span class="tooltip"><p>Holds a reference to the managed object model for the application.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/persistentStoreCoordinator">&nbsp;&nbsp;persistentStoreCoordinator</a></code>
-		<span class="tooltip"><p>Holds a reference to the used persistent store coordinator.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/persistentStoreType">&nbsp;&nbsp;persistentStoreType</a></code>
-		<span class="tooltip"><p>Specifies the persisten store type to use.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li>
-						</ul>
-						
-						
 						<a title="Background Methods" name="task_Background Methods"></a>
 						<h3 class="subsubtitle task-title">Background Methods</h3>
 
@@ -774,6 +745,35 @@ predicate and passes them through the completion block.</p></span>
 predicate and passes them through the completion block.</p></span>
 	</span>
 	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Customizing Methods" name="task_Customizing Methods"></a>
+						<h3 class="subsubtitle task-title">Customizing Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/managedObjectModel">&nbsp;&nbsp;managedObjectModel</a></code>
+		<span class="tooltip"><p>Holds a reference to the managed object model for the application.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/persistentStoreCoordinator">&nbsp;&nbsp;persistentStoreCoordinator</a></code>
+		<span class="tooltip"><p>Holds a reference to the used persistent store coordinator.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/persistentStoreType">&nbsp;&nbsp;persistentStoreType</a></code>
+		<span class="tooltip"><p>Specifies the persisten store type to use.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -1007,12 +1007,10 @@ to specify a different persistent store type, you should changed it always
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Persistent store types supported by Core Data:</p>
+		<p>Persistent store types supported by <a href="VPPCoreData.html">VPPCoreData</a>:</p>
 
 <ul>
 <li>NSSQLiteStoreType</li>
-<li>NSXMLStoreType</li>
-<li>NSBinaryStoreType</li>
 <li>NSInMemoryStoreType</li>
 </ul>
 
