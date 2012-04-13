@@ -39,7 +39,7 @@
  Usage:
  
  You can pass an order-by clause just like in SQL. Syntax expected:
-    `property [asc|desc][, property [asc|desc]][, ...]`
+    property [asc|desc][, property [asc|desc]][, ...]
  
  Examples:
  - date

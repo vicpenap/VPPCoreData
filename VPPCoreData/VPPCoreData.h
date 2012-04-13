@@ -581,11 +581,9 @@
 
 /** Specifies the persisten store type to use.
  
- Persistent store types supported by Core Data:
+ Persistent store types supported by VPPCoreData:
  
  - NSSQLiteStoreType
- - NSXMLStoreType
- - NSBinaryStoreType
  - NSInMemoryStoreType
  
  By default, NSSQLiteStoreType.

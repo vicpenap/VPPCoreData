@@ -22,6 +22,20 @@ later and it may contain bugs.
 
 ## Using it
 
+1. Import `VPPCoreData.h` or `VPPCoreDataActiveRecord.h`.
+2. Make sure your `xcdatamodeld` is named 'Model'. If not, you should change 
+the `dbFilename` property from VPPCoreData before making any Core Data call:
+	
+	[[VPPCoreData sharedInstance] setDbFilename:@"your_model_filename"]; 
+
+3. If you need an initial sqlite database, set the `initialDBFilename` property
+from VPPCoreData before making any Core Data call:
+
+	[[VPPCoreData sharedInstance] setInitialDBFilename:@"your_sqlite_filename"]; 
+
+Take a look at the sample code or the tests to get more info about how to use
+it.	
+
 ### Active Record
 
 Since v0.2.0, VPPCoreData includes a syntax compliant with Active Record pattern.
