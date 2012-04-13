@@ -26,12 +26,12 @@ later and it may contain bugs.
 2. Make sure your `xcdatamodeld` is named 'Model'. If not, you should change 
 the `dbFilename` property from VPPCoreData before making any Core Data call:
 	
-	[[VPPCoreData sharedInstance] setDbFilename:@"your_model_filename"]; 
+		[[VPPCoreData sharedInstance] setDbFilename:@"your_model_filename"]; 
 
 3. If you need an initial sqlite database, set the `initialDBFilename` property
 from VPPCoreData before making any Core Data call:
 
-	[[VPPCoreData sharedInstance] setInitialDBFilename:@"your_sqlite_filename"]; 
+		[[VPPCoreData sharedInstance] setInitialDBFilename:@"your_sqlite_filename"]; 
 
 Take a look at the sample code or the tests to get more info about how to use
 it.	
