@@ -9,6 +9,7 @@
 #import "ActiveRecordTests.h"
 #import "VPPCoreDataActiveRecord.h"
 #import "Quote.h"
+#import "Author.h"
 
 @implementation ActiveRecordTests
 @synthesize moc;
@@ -116,7 +117,29 @@
     predicate = [NSPredicate predicateWithFormat:@"quote contains[cd] %@",@"no results"];
     NSArray *retrieved = [Quote findBy:predicate orderBy:@"quote"];
     STAssertEqualObjects([NSArray array], retrieved, @"objects do not match");
+}
 
+- (void) testFindByAuthor
+{
+    Author *author = [Author create];
+    author.name = @"Victor";
+    
+    NSMutableArray *quotes = [NSMutableArray array];
+    [quotes addObjectsFromArray:[self createPrefix:@"Quote" amount:10]];
+        
+    [self createPrefix:@"Text" amount:20];
+
+    NSArray *subArray = [quotes subarrayWithRange:NSMakeRange(0, 5)];
+    [subArray makeObjectsPerformSelector:@selector(setAuthor:) withObject:author];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"author == %@",author];
+    subArray = [subArray sortedArrayUsingDescriptors:[NSSortDescriptor sortDescriptorsFromSQLString:@"quote"]];
+    
+    NSArray *retrievedQuotes = [Quote findBy:predicate orderBy:@"quote"];
+    STAssertEqualObjects(subArray, retrievedQuotes, @"objects do not match");
+    
+    NSSet *quotesSet = [NSSet setWithArray:subArray];
+    STAssertEqualObjects(author.quotes, quotesSet,  @"objects do not match");
 }
 
 - (void) testCount
@@ -166,6 +189,9 @@
     
     Quote *qFirst = [[Quote moc:mmoc] create];
     qFirst.quote = @"a";
+    Author *author = [[Author moc:mmoc] create];
+    author.name = @"Victor";
+    qFirst.author = author;
     
     Quote *q = [[Quote moc:mmoc] create];
     q.quote = @"b";
@@ -178,7 +204,9 @@
     Quote *first = [Quote firstBy:nil orderBy:@"quote"];
     
     qFirst = [qFirst refetch];
+    author = [author refetch];
     STAssertEqualObjects(first, qFirst, @"Objects do not match");
+    STAssertEqualObjects(author, qFirst.author, @"Objects do not match");
 }
 
 
