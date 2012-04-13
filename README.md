@@ -48,7 +48,7 @@ You can also perform those calls using different Managed Object Contexts:
 You can perform similar different-moc calls with managed objects, such as:
 	[[aQuote moc] refetch]; 
 
-Take a look at this documentation page: /Users/victor/help/html/Protocols/VPPCoreDataActiveRecord.html to see all existing Active Record operations.
+Take a look at this documentation page: http://vicpenap.github.com/VPPCoreData/Protocols/VPPCoreDataActiveRecord.html to see all existing Active Record operations.
 
 You may notice that there's no save method. This is due to the nature of Core Data.
 When you want to save changes, call the `saveChanges:` method from the Managed Object
