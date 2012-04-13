@@ -50,6 +50,8 @@
 	
 	<option value="//api/name/persistentStoreCoordinator">&nbsp;&nbsp;&nbsp;&nbsp;persistentStoreCoordinator</option>
 	
+	<option value="//api/name/persistentStoreType">&nbsp;&nbsp;&nbsp;&nbsp;persistentStoreType</option>
+	
 	
 	
 	
@@ -61,6 +63,12 @@
 	
 	
 	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/allObjectsForEntity:orderBy:filteredBy:">&nbsp;&nbsp;&nbsp;&nbsp;- allObjectsForEntity:orderBy:filteredBy:</option>
+	
+	<option value="//api/name/allObjectsForEntity:orderBy:filteredBy:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- allObjectsForEntity:orderBy:filteredBy:completion:</option>
+	
+	<option value="//api/name/allObjectsForEntity:orderBy:filteredBy:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- allObjectsForEntity:orderBy:filteredBy:managedObjectContext:</option>
 	
 	<option value="//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:">&nbsp;&nbsp;&nbsp;&nbsp;- allObjectsForEntity:orderedByAttribute:ascending:filteredBy:</option>
 	
@@ -106,6 +114,12 @@
 	
 	<option value="//api/name/objectWithExistingID:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- objectWithExistingID:managedObjectContext:</option>
 	
+	<option value="//api/name/objectsForEntity:orderBy:filteredBy:fetchLimit:offset:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForEntity:orderBy:filteredBy:fetchLimit:offset:</option>
+	
+	<option value="//api/name/objectsForEntity:orderBy:filteredBy:fetchLimit:offset:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForEntity:orderBy:filteredBy:fetchLimit:offset:completion:</option>
+	
+	<option value="//api/name/objectsForEntity:orderBy:filteredBy:fetchLimit:offset:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForEntity:orderBy:filteredBy:fetchLimit:offset:managedObjectContext:</option>
+	
 	<option value="//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:</option>
 	
 	<option value="//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:</option>
@@ -148,11 +162,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Main thread Methods">Main thread Methods</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_DifferentManagedObjectContext Methods">DifferentManagedObjectContext Methods</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Customizing Methods">Customizing Methods</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Background Methods">Background Methods</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_DifferentManagedObjectContext Methods">DifferentManagedObjectContext Methods</a></span></li>
 	
 </ul></li>
 
@@ -172,6 +186,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/persistentStoreCoordinator">persistentStoreCoordinator</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/persistentStoreType">persistentStoreType</a></span></li>
+	
 </ul></li>
 
 
@@ -185,6 +201,12 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allObjectsForEntity:orderBy:filteredBy:">allObjectsForEntity:orderBy:filteredBy:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allObjectsForEntity:orderBy:filteredBy:completion:">allObjectsForEntity:orderBy:filteredBy:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allObjectsForEntity:orderBy:filteredBy:managedObjectContext:">allObjectsForEntity:orderBy:filteredBy:managedObjectContext:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:">allObjectsForEntity:orderedByAttribute:ascending:filteredBy:</a></span></li>
 	
@@ -229,6 +251,12 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectWithExistingID:">objectWithExistingID:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectWithExistingID:managedObjectContext:">objectWithExistingID:managedObjectContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsForEntity:orderBy:filteredBy:fetchLimit:offset:">objectsForEntity:orderBy:filteredBy:fetchLimit:offset:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsForEntity:orderBy:filteredBy:fetchLimit:offset:completion:">objectsForEntity:orderBy:filteredBy:fetchLimit:offset:completion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsForEntity:orderBy:filteredBy:fetchLimit:offset:managedObjectContext:">objectsForEntity:orderBy:filteredBy:fetchLimit:offset:managedObjectContext:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:">objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:</a></span></li>
 	
@@ -438,8 +466,15 @@ predicate.</p></span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:">&ndash;&nbsp;objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:</a></code>
-		<span class="tooltip"><p>Returns a page of objects for the given entity that match the given predicate.</p></span>
+		<code><a href="#//api/name/allObjectsForEntity:orderBy:filteredBy:">&ndash;&nbsp;allObjectsForEntity:orderBy:filteredBy:</a></code>
+		<span class="tooltip"><p>Returns all objects for the given entity that match the given predicate.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allObjectsForEntity:sortDescriptors:filteredBy:">&ndash;&nbsp;allObjectsForEntity:sortDescriptors:filteredBy:</a></code>
+		<span class="tooltip"><p>Returns all objects for the given entity that match the given predicate.</p></span>
 	</span>
 	
 	
@@ -453,15 +488,22 @@ ordered by the given attribute.</p></span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:">&ndash;&nbsp;objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:</a></code>
+		<code><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:">&ndash;&nbsp;objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:</a></code>
 		<span class="tooltip"><p>Returns a page of objects for the given entity that match the given predicate.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/allObjectsForEntity:sortDescriptors:filteredBy:">&ndash;&nbsp;allObjectsForEntity:sortDescriptors:filteredBy:</a></code>
-		<span class="tooltip"><p>Returns all objects for the given entity that match the given predicate.</p></span>
+		<code><a href="#//api/name/objectsForEntity:orderBy:filteredBy:fetchLimit:offset:">&ndash;&nbsp;objectsForEntity:orderBy:filteredBy:fetchLimit:offset:</a></code>
+		<span class="tooltip"><p>Returns a page of objects for the given entity that match the given predicate.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:">&ndash;&nbsp;objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:</a></code>
+		<span class="tooltip"><p>Returns a page of objects for the given entity that match the given predicate.</p></span>
 	</span>
 	
 	
@@ -504,93 +546,6 @@ ordered by the given attribute.</p></span>
 						</ul>
 						
 						
-						<a title="Customizing Methods" name="task_Customizing Methods"></a>
-						<h3 class="subsubtitle task-title">Customizing Methods</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/managedObjectModel">&nbsp;&nbsp;managedObjectModel</a></code>
-		<span class="tooltip"><p>Holds a reference to the managed object model for the application.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/persistentStoreCoordinator">&nbsp;&nbsp;persistentStoreCoordinator</a></code>
-		<span class="tooltip"><p>Holds a reference to the used persistent store coordinator.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li>
-						</ul>
-						
-						
-						<a title="Background Methods" name="task_Background Methods"></a>
-						<h3 class="subsubtitle task-title">Background Methods</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/getNewObjectForEntity:completion:">&ndash;&nbsp;getNewObjectForEntity:completion:</a></code>
-		<span class="tooltip"><p>Creates in background a new object in background for the given entity and
-passes it through the completion <code>block</code> parameter.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/findObjectFromEntity:withPredicate:completion:">&ndash;&nbsp;findObjectFromEntity:withPredicate:completion:</a></code>
-		<span class="tooltip"><p>Locates in background the first object for the given entity that matches
-the given predicate and passes it through the completion <code>block</code> parameter.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/countObjectsForEntity:filteredBy:completion:">&ndash;&nbsp;countObjectsForEntity:filteredBy:completion:</a></code>
-		<span class="tooltip"><p>Counts in background all objects for the given entity that match the given
-predicate, and passes the result through the completion block.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:">&ndash;&nbsp;objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:</a></code>
-		<span class="tooltip"><p>Gets in background a page of objects for the given entity that match the
-given predicate and passes them through the completion block.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:">&ndash;&nbsp;allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:</a></code>
-		<span class="tooltip"><p>Fetches in background all objects for the given entity that match the given
-predicate, ordered by the given attribute and passes them through the completion
-block.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:">&ndash;&nbsp;objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:</a></code>
-		<span class="tooltip"><p>Fetches in background a page of objects for the given entity that match the
-given predicate and passes them through the completion block.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/allObjectsForEntity:sortDescriptors:filteredBy:completion:">&ndash;&nbsp;allObjectsForEntity:sortDescriptors:filteredBy:completion:</a></code>
-		<span class="tooltip"><p>Gets in background all objects for the given entity that match the given
-predicate and passes them through the completion block.</p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
 						<a title="DifferentManagedObjectContext Methods" name="task_DifferentManagedObjectContext Methods"></a>
 						<h3 class="subsubtitle task-title">DifferentManagedObjectContext Methods</h3>
 
@@ -621,14 +576,6 @@ ordered by the given attribute using the given managed object context.</p></span
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:">&ndash;&nbsp;objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:</a></code>
-		<span class="tooltip"><p>Returns a page of objects for the given entity that match the given predicate
-using the given managed object context.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/allObjectsForEntity:sortDescriptors:filteredBy:managedObjectContext:">&ndash;&nbsp;allObjectsForEntity:sortDescriptors:filteredBy:managedObjectContext:</a></code>
 		<span class="tooltip"><p>Returns all objects for the given entity that match the given predicate,
 ordered by the given attribute using the given managed object context.</p></span>
@@ -637,9 +584,33 @@ ordered by the given attribute using the given managed object context.</p></span
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/allObjectsForEntity:orderBy:filteredBy:managedObjectContext:">&ndash;&nbsp;allObjectsForEntity:orderBy:filteredBy:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Returns all objects for the given entity that match the given predicate,
+ordered by the given order-by string using the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:">&ndash;&nbsp;objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Returns a page of objects for the given entity that match the given predicate
+using the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:managedObjectContext:">&ndash;&nbsp;objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:managedObjectContext:</a></code>
 		<span class="tooltip"><p>Returns a page of objects for the given entity that match the given predicate
   using the given managed object context.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForEntity:orderBy:filteredBy:fetchLimit:offset:managedObjectContext:">&ndash;&nbsp;objectsForEntity:orderBy:filteredBy:fetchLimit:offset:managedObjectContext:</a></code>
+		<span class="tooltip"><p>Returns a page of objects for the given entity that match the given predicate
+using the given managed object context.</p></span>
 	</span>
 	
 	
@@ -691,6 +662,116 @@ managed object context.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/objectWithExistingID:managedObjectContext:">&ndash;&nbsp;objectWithExistingID:managedObjectContext:</a></code>
 		<span class="tooltip"><p>Refetches the given object with the given managed object context.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Customizing Methods" name="task_Customizing Methods"></a>
+						<h3 class="subsubtitle task-title">Customizing Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/managedObjectModel">&nbsp;&nbsp;managedObjectModel</a></code>
+		<span class="tooltip"><p>Holds a reference to the managed object model for the application.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/persistentStoreCoordinator">&nbsp;&nbsp;persistentStoreCoordinator</a></code>
+		<span class="tooltip"><p>Holds a reference to the used persistent store coordinator.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/persistentStoreType">&nbsp;&nbsp;persistentStoreType</a></code>
+		<span class="tooltip"><p>Specifies the persisten store type to use.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Background Methods" name="task_Background Methods"></a>
+						<h3 class="subsubtitle task-title">Background Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getNewObjectForEntity:completion:">&ndash;&nbsp;getNewObjectForEntity:completion:</a></code>
+		<span class="tooltip"><p>Creates in background a new object in background for the given entity and
+passes it through the completion <code>block</code> parameter.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/findObjectFromEntity:withPredicate:completion:">&ndash;&nbsp;findObjectFromEntity:withPredicate:completion:</a></code>
+		<span class="tooltip"><p>Locates in background the first object for the given entity that matches
+the given predicate and passes it through the completion <code>block</code> parameter.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/countObjectsForEntity:filteredBy:completion:">&ndash;&nbsp;countObjectsForEntity:filteredBy:completion:</a></code>
+		<span class="tooltip"><p>Counts in background all objects for the given entity that match the given
+predicate, and passes the result through the completion block.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:">&ndash;&nbsp;objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:completion:</a></code>
+		<span class="tooltip"><p>Gets in background a page of objects for the given entity that match the
+given predicate and passes them through the completion block.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:">&ndash;&nbsp;objectsForEntity:sortDescriptors:filteredBy:fetchLimit:offset:completion:</a></code>
+		<span class="tooltip"><p>Fetches in background a page of objects for the given entity that match the
+given predicate and passes them through the completion block.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsForEntity:orderBy:filteredBy:fetchLimit:offset:completion:">&ndash;&nbsp;objectsForEntity:orderBy:filteredBy:fetchLimit:offset:completion:</a></code>
+		<span class="tooltip"><p>Fetches in background a page of objects for the given entity that match the
+given predicate and passes them through the completion block.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:">&ndash;&nbsp;allObjectsForEntity:orderedByAttribute:ascending:filteredBy:completion:</a></code>
+		<span class="tooltip"><p>Fetches in background all objects for the given entity that match the given
+predicate, ordered by the given attribute and passes them through the completion
+block.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allObjectsForEntity:sortDescriptors:filteredBy:completion:">&ndash;&nbsp;allObjectsForEntity:sortDescriptors:filteredBy:completion:</a></code>
+		<span class="tooltip"><p>Gets in background all objects for the given entity that match the given
+predicate and passes them through the completion block.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allObjectsForEntity:orderBy:filteredBy:completion:">&ndash;&nbsp;allObjectsForEntity:orderBy:filteredBy:completion:</a></code>
+		<span class="tooltip"><p>Gets in background all objects for the given entity that match the given
+predicate and passes them through the completion block.</p></span>
 	</span>
 	
 	
@@ -904,6 +985,55 @@ to specify a different persistent store type, you should changed it always
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/persistentStoreType" title="persistentStoreType"></a>
+	<h3 class="subsubtitle method-title">persistentStoreType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specifies the persisten store type to use.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *persistentStoreType</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Persistent store types supported by Core Data:</p>
+
+<ul>
+<li>NSSQLiteStoreType</li>
+<li>NSXMLStoreType</li>
+<li>NSBinaryStoreType</li>
+<li>NSInMemoryStoreType</li>
+</ul>
+
+
+<p>By default, NSSQLiteStoreType.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -953,6 +1083,157 @@ to specify a different persistent store type, you should changed it always
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/allObjectsForEntity:orderBy:filteredBy:" title="allObjectsForEntity:orderBy:filteredBy:"></a>
+	<h3 class="subsubtitle method-title">allObjectsForEntity:orderBy:filteredBy:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns all objects for the given entity that match the given predicate.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)allObjectsForEntity:(NSString *)<em>entity</em> orderBy:(NSString *)<em>orderBy</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>orderBy</em></dt>
+			<dd><p>An SQL-like order-by clausule. For example: <code>name asc, date desc</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allObjectsForEntity:orderBy:filteredBy:completion:" title="allObjectsForEntity:orderBy:filteredBy:completion:"></a>
+	<h3 class="subsubtitle method-title">allObjectsForEntity:orderBy:filteredBy:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets in background all objects for the given entity that match the given
+predicate and passes them through the completion block.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)allObjectsForEntity:(NSString *)<em>entity</em> orderBy:(NSString *)<em>orderBy</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> completion:(void ( ^ ) ( NSArray *objects ))<em>block</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>orderBy</em></dt>
+			<dd><p>An SQL-like order-by clausule. For example: <code>name asc, date desc</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The completion block is launched in main thread. The returned entities are
+re-fetched with main managed object context, so it is safe to use them in main
+thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allObjectsForEntity:orderBy:filteredBy:managedObjectContext:" title="allObjectsForEntity:orderBy:filteredBy:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">allObjectsForEntity:orderBy:filteredBy:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns all objects for the given entity that match the given predicate,
+ordered by the given order-by string using the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)allObjectsForEntity:(NSString *)<em>entity</em> orderBy:(NSString *)<em>orderBy</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/allObjectsForEntity:orderedByAttribute:ascending:filteredBy:" title="allObjectsForEntity:orderedByAttribute:ascending:filteredBy:"></a>
@@ -1807,6 +2088,207 @@ managed object context.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/objectsForEntity:orderBy:filteredBy:fetchLimit:offset:" title="objectsForEntity:orderBy:filteredBy:fetchLimit:offset:"></a>
+	<h3 class="subsubtitle method-title">objectsForEntity:orderBy:filteredBy:fetchLimit:offset:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a page of objects for the given entity that match the given predicate.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsForEntity:(NSString *)<em>entity</em> orderBy:(NSArray *)<em>orderBy</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> fetchLimit:(int)<em>fetchLimit</em> offset:(int)<em>offset</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>orderBy</em></dt>
+			<dd><p>An SQL-like order-by clausule. For example: <code>name asc, date desc</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fetchLimit</em></dt>
+			<dd><p>the max amount of objects to retrieve.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>the page&rsquo;s offset.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsForEntity:orderBy:filteredBy:fetchLimit:offset:completion:" title="objectsForEntity:orderBy:filteredBy:fetchLimit:offset:completion:"></a>
+	<h3 class="subsubtitle method-title">objectsForEntity:orderBy:filteredBy:fetchLimit:offset:completion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetches in background a page of objects for the given entity that match the
+given predicate and passes them through the completion block.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)objectsForEntity:(NSString *)<em>entity</em> orderBy:(NSString *)<em>orderBy</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> fetchLimit:(int)<em>fetchLimit</em> offset:(int)<em>offset</em> completion:(void ( ^ ) ( NSArray *objects ))<em>block</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>orderBy</em></dt>
+			<dd><p>An SQL-like order-by clausule. For example: <code>name asc, date desc</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fetchLimit</em></dt>
+			<dd><p>the max amount of objects to retrieve.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>the page&rsquo;s offset.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The completion block is launched in main thread. The returned entities are
+re-fetched with main managed object context, so it is safe to use them in main
+thread.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsForEntity:orderBy:filteredBy:fetchLimit:offset:managedObjectContext:" title="objectsForEntity:orderBy:filteredBy:fetchLimit:offset:managedObjectContext:"></a>
+	<h3 class="subsubtitle method-title">objectsForEntity:orderBy:filteredBy:fetchLimit:offset:managedObjectContext:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a page of objects for the given entity that match the given predicate
+using the given managed object context.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)objectsForEntity:(NSString *)<em>entity</em> orderBy:(NSString *)<em>orderBy</em> filteredBy:(NSPredicate *)<em>predicateOrNil</em> fetchLimit:(int)<em>fetchLimit</em> offset:(int)<em>offset</em> managedObjectContext:(NSManagedObjectContext *)<em>managedObjectContext</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>The objects' entity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>orderBy</em></dt>
+			<dd><p>An SQL-like order-by clausule. For example: <code>name asc, date desc</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>predicateOrNil</em></dt>
+			<dd><p>the predicate to filter the results.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fetchLimit</em></dt>
+			<dd><p>the max amount of objects to retrieve.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>the first item to retrieve.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VPPCoreData.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:" title="objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:"></a>
 	<h3 class="subsubtitle method-title">objectsForEntity:orderedByAttribute:ascending:filteredBy:fetchLimit:offset:</h3>
 	
@@ -2005,7 +2487,7 @@ descending (when ascending is NO).</p></dd>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>offset</em></dt>
-			<dd><p>the page&rsquo;s offset.</p></dd>
+			<dd><p>the first item to retrieve.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -2211,7 +2693,7 @@ thread.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>offset</em></dt>
-			<dd><p>the page&rsquo;s offset.</p></dd>
+			<dd><p>the first item to retrieve.</p></dd>
 		</dl>
 		
 	</div>
@@ -2409,7 +2891,7 @@ been fetched through the given managed object context.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 Víctor Pena Placer. All rights reserved. (Last updated: 2012-02-15)</span><br />
+						<p><span class="copyright">&copy; 2012 Víctor Pena Placer. All rights reserved. (Last updated: 2012-04-13)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 752)</a>.</span></p>
 						
