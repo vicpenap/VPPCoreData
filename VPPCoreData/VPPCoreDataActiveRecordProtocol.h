@@ -42,6 +42,14 @@
     NSManagedObjectContext *aDifferentMOC = ... ;
     [[Quote moc:aDifferentMOC] all];
     [[Quote moc:aDifferentMOC] findBy:somePredicate];
+ 
+ **Never** invoke any of these methods directly from a given managed object context,
+ for example:
+ 
+    NSManagedObjectContext *aDifferentMOC = ... ;
+    [aDifferentMOC all];
+ 
+ 
 */
 
 @protocol VPPCoreDataActiveRecordManagedObjectContext
@@ -61,21 +69,21 @@
  @param orderBy an SQL-like order by clause. */
 - (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
 
-/** Returns the all objects from the caller class. */
+/** Returns all objects from the caller class. */
 - (NSArray *) all;
 
-/** Returns the all objects from the caller class.
+/** Returns all objects from the caller class.
  
  @param orderBy an SQL-like order by clause. */
 - (NSArray *) allOrderBy:(NSString *)orderBy;
 
-/** Returns all objects from the caller class. 
+/** Returns objects from the caller class. 
  
  @param predicate the predicate to filter with.
  */
 - (NSArray *) findBy:(NSPredicate *)predicate;
 
-/** Returns all objects from the caller class. 
+/** Returns objects from the caller class. 
  
  @param predicate the predicate to filter with.
  @param orderBy an SQL-like order by clause. */
@@ -114,6 +122,9 @@
  to perform core data actions from a given managed object. This protocol brings 
  the Active Record pattern to Objective-c.
  
+ You may notice that there's no save method. This is due to the nature of Core Data.
+ When you want to save changes, call the `saveChanges:` method from the Managed Object
+ Context you are using.
 
  */
 
@@ -134,10 +145,10 @@
  @param orderBy an SQL-like order by clause. */
 + (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
 
-/** Returns the all objects from the caller class. */
+/** Returns all objects from the caller class. */
 + (NSArray *) all;
 
-/** Returns the all objects from the caller class.
+/** Returns all objects from the caller class.
  
  @param orderBy an SQL-like order by clause. */
 + (NSArray *) allOrderBy:(NSString *)orderBy;
