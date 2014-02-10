@@ -233,7 +233,7 @@
     return YES;
 }
 
-- (int) countObjectsForEntity:(NSString *)entity 
+- (NSUInteger) countObjectsForEntity:(NSString *)entity
                    filteredBy:(NSPredicate *)predicateOrNil
          managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
 	/*
@@ -254,7 +254,7 @@
 	// Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
 	NSError *error = nil;
-	int result = [managedObjectContext countForFetchRequest:fetchRequest error:&error];
+	NSUInteger result = [managedObjectContext countForFetchRequest:fetchRequest error:&error];
 	[fetchRequest release];
     
 	if (error) {
@@ -528,7 +528,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
     return [self allObjectsForEntity:entity orderedByAttribute:attributeOrNil ascending:ascending filteredBy:predicateOrNil managedObjectContext:self.mainContext];
 }
 
-- (int) countObjectsForEntity:(NSString *)entity 
+- (NSUInteger) countObjectsForEntity:(NSString *)entity 
                    filteredBy:(NSPredicate*)predicateOrNil {
     
     return [self countObjectsForEntity:entity filteredBy:predicateOrNil managedObjectContext:self.mainContext];
@@ -658,11 +658,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
 
 - (void) countObjectsForEntity:(NSString *)entity 
                     filteredBy:(NSPredicate*)predicateOrNil 
-                    completion:(void (^) (int count))block {
+                    completion:(void (^) (NSUInteger count))block {
     
     NSOperationQueue *q = [[NSOperationQueue alloc] init];
     [q addOperationWithBlock:^{
-        int count = [self countObjectsForEntity:entity filteredBy:predicateOrNil managedObjectContext:[self createManagedObjectContext]];
+        NSUInteger count = [self countObjectsForEntity:entity filteredBy:predicateOrNil managedObjectContext:[self createManagedObjectContext]];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             block(count);

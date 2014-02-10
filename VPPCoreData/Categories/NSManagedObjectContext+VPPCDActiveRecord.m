@@ -32,28 +32,28 @@
 #import "VPPCoreData.h"
 
 
-@interface NSManagedObjectContext (ClassName)
-extern const char classNameKey;
-extern const char objectKey;
+@interface NSManagedObjectContext (VPPClassName)
+extern const char classNameKey_vpp_;
+extern const char objectKey_vpp_;
 
 
-- (NSString *) getClassName;
-- (id) getObject;
+- (NSString *) getClassName_vpp_;
+- (id) getObject_vpp_;
 
 @end
 
 
-@implementation NSManagedObjectContext (ClassName)
+@implementation NSManagedObjectContext (VPPClassName)
 
-- (NSString *) getClassName 
+- (NSString *) getClassName_vpp_
 {
-    NSString *associatedObject = (NSString *)objc_getAssociatedObject(self, &classNameKey);
+    NSString *associatedObject = (NSString *)objc_getAssociatedObject(self, &classNameKey_vpp_);
     return associatedObject;
 }
 
-- (id) getObject
+- (id) getObject_vpp_
 {
-    return objc_getAssociatedObject(self, &objectKey);    
+    return objc_getAssociatedObject(self, &objectKey_vpp_);
 }
 
 
@@ -61,19 +61,19 @@ extern const char objectKey;
 
 @implementation NSManagedObjectContext (VPPCDActiveRecord)
 
-- (id) create 
+- (id) create_vpp_ 
 {
-    return [[VPPCoreData sharedInstance] getNewObjectForEntity:[self getClassName] managedObjectContext:self];
+    return [[VPPCoreData sharedInstance] getNewObjectForEntity:[self getClassName_vpp_] managedObjectContext:self];
 }
 
-- (id) refetch
+- (id) refetch_vpp_
 {
-    return [self fetch:[self getObject]];
+    return [self fetch:[self getObject_vpp_]];
 }
 
-- (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy
+- (id) firstBy:(NSPredicate *)predicate orderBy_vpp_:(NSString *)orderBy
 {
-    NSArray *objects = [[VPPCoreData sharedInstance] objectsForEntity:[self getClassName] orderBy:orderBy filteredBy:predicate fetchLimit:1 offset:0 managedObjectContext:self];
+    NSArray *objects = [[VPPCoreData sharedInstance] objectsForEntity:[self getClassName_vpp_] orderBy:orderBy filteredBy:predicate fetchLimit:1 offset:0 managedObjectContext:self];
     
     if ([objects count] > 0) 
     {
@@ -83,50 +83,50 @@ extern const char objectKey;
     return nil;
 }
 
-- (NSArray *) all 
+- (NSArray *) all_vpp_ 
 {
-    return [self findBy:nil orderBy:nil];
+    return [self findBy:nil orderBy_vpp_:nil];
 }
 
-- (NSArray *) findBy:(NSPredicate *)predicate
+- (NSArray *) findBy_vpp_:(NSPredicate *)predicate
 {
-    return [self findBy:predicate orderBy:nil];
+    return [self findBy:predicate orderBy_vpp_:nil];
 }
 
 
-- (NSArray *) allOrderBy:(NSString *)orderBy
+- (NSArray *) allOrderBy_vpp_:(NSString *)orderBy
 {
-    return [[VPPCoreData sharedInstance] allObjectsForEntity:[self getClassName] orderBy:orderBy filteredBy:nil managedObjectContext:self];
+    return [[VPPCoreData sharedInstance] allObjectsForEntity:[self getClassName_vpp_] orderBy:orderBy filteredBy:nil managedObjectContext:self];
 }
 
-- (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy
+- (NSArray *) findBy:(NSPredicate *)predicate orderBy_vpp_:(NSString *)orderBy
 {
-    return [self findBy:predicate orderBy:orderBy offset:0 limit:0];
+    return [self findBy:predicate orderBy:orderBy offset:0 limit_vpp_:0];
 }
 
-- (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit:(int)limit
+- (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit_vpp_:(int)limit
 {
-    return [[VPPCoreData sharedInstance] objectsForEntity:[self getClassName] orderBy:orderBy filteredBy:predicate fetchLimit:limit offset:offset managedObjectContext:self];
+    return [[VPPCoreData sharedInstance] objectsForEntity:[self getClassName_vpp_] orderBy:orderBy filteredBy:predicate fetchLimit:limit offset:offset managedObjectContext:self];
 }
 
-- (int) count
+- (NSUInteger) count_vpp_
 {
-    return [self countBy:nil];
+    return [self countBy_vpp_:nil];
 }
 
-- (int) countBy:(NSPredicate *)predicate
+- (NSUInteger) countBy_vpp_:(NSPredicate *)predicate
 {
-    return [[VPPCoreData sharedInstance] countObjectsForEntity:[self getClassName] filteredBy:predicate managedObjectContext:self];    
+    return [[VPPCoreData sharedInstance] countObjectsForEntity:[self getClassName_vpp_] filteredBy:predicate managedObjectContext:self];
 }
 
-- (void) remove 
+- (void) remove_vpp_ 
 {
-    [[VPPCoreData sharedInstance] deleteObject:[self getObject] managedObjectContext:self];
+    [[VPPCoreData sharedInstance] deleteObject:[self getObject_vpp_] managedObjectContext:self];
 }
 
-- (void) removeAll
+- (void) removeAll_vpp_
 {
-    [[VPPCoreData sharedInstance] deleteAllObjectsFromEntity:[self getClassName] managedObjectContext:self];
+    [[VPPCoreData sharedInstance] deleteAllObjectsFromEntity:[self getClassName_vpp_] managedObjectContext:self];
 }
 
 

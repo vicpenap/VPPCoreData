@@ -34,30 +34,30 @@
 
 
 
-@interface NSManagedObjectContext (Object)
+@interface NSManagedObjectContext (VPPObject)
 
-extern const char classNameKey;
-extern const char objectKey;
+extern const char classNameKey_vpp_;
+extern const char objectKey_vpp_;
 
-- (void) setClassName:(NSString *)className;
-- (void) setObject:(id)object;
+- (void) setClassName_vpp_:(NSString *)className;
+- (void) setObject_vpp_:(id)object;
 
 
 @end
 
 
-@implementation NSManagedObjectContext (Object)
-const char classNameKey;
-const char objectKey;
+@implementation NSManagedObjectContext (VPPObject)
+const char classNameKey_vpp_;
+const char objectKey_vpp_;
 
-- (void) setClassName:(NSString *)className 
+- (void) setClassName_vpp_:(NSString *)className
 {
-    objc_setAssociatedObject(self, &classNameKey, className, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, &classNameKey_vpp_, className, OBJC_ASSOCIATION_RETAIN);
 }
 
-- (void) setObject:(id)object
+- (void) setObject_vpp_:(id)object
 {
-    objc_setAssociatedObject(self, &objectKey, object, OBJC_ASSOCIATION_RETAIN);    
+    objc_setAssociatedObject(self, &objectKey_vpp_, object, OBJC_ASSOCIATION_RETAIN);
 }
 
 @end
@@ -65,111 +65,111 @@ const char objectKey;
 
 @implementation NSManagedObject (VPPCDActiveRecord)
 
-+ (NSString *) className 
++ (NSString *) className_vpp_ 
 {
     return NSStringFromClass(self);
 }
 
-+ (NSManagedObjectContext *) moc:(NSManagedObjectContext *)moc
++ (NSManagedObjectContext *) moc_vpp_:(NSManagedObjectContext *)moc
 {
-    NSString *class = [self className];
-    [moc setClassName:class];
+    NSString *class = [self className_vpp_];
+    [moc setClassName_vpp_:class];
     return moc;    
 }
 
-+ (NSManagedObjectContext *) moc 
++ (NSManagedObjectContext *) moc_vpp_ 
 {
     NSManagedObjectContext *moc = [NSManagedObjectContext create];
-    return [self moc:moc];
+    return [self moc_vpp_:moc];
 }
 
 
-+ (NSManagedObjectContext *) mainMOC
++ (NSManagedObjectContext *) mainMOC_vpp_
 {
-    return [self moc:[[VPPCoreData sharedInstance] mainContext]];
+    return [self moc_vpp_:[[VPPCoreData sharedInstance] mainContext]];
 }
 
-- (NSManagedObjectContext *) moc 
+- (NSManagedObjectContext *) moc_vpp_ 
 {
     NSManagedObjectContext *moc = [NSManagedObjectContext create];
-    return [self moc:moc];
+    return [self moc_vpp_:moc];
 }
 
 
-- (NSManagedObjectContext *) moc:(NSManagedObjectContext *)moc
+- (NSManagedObjectContext *) moc_vpp_:(NSManagedObjectContext *)moc
 {
-    [moc setObject:self];
-    return [[self class] moc:moc];
+    [moc setObject_vpp_:self];
+    return [[self class] moc_vpp_:moc];
 }
 
-- (NSManagedObjectContext *) mainMOC 
+- (NSManagedObjectContext *) mainMOC_vpp_ 
 {
-    return [self moc:[[VPPCoreData sharedInstance] mainContext]];
-}
-
-
-
-
-
-+ (id) create 
-{
-    return [[self mainMOC] create];
-}
-
-- (id) refetch 
-{
-    return [[self mainMOC] refetch];
+    return [self moc_vpp_:[[VPPCoreData sharedInstance] mainContext]];
 }
 
 
-+ (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy
+
+
+
++ (id) create_vpp_ 
 {
-    return [[self mainMOC] firstBy:predicate orderBy:orderBy];
+    return [[self mainMOC_vpp_] create_vpp_];
 }
 
-+ (NSArray *) all 
+- (id) refetch_vpp_ 
 {
-    return [[self mainMOC] all];
+    return [[self mainMOC_vpp_] refetch_vpp_];
 }
 
-+ (NSArray *) findBy:(NSPredicate *)predicate
+
++ (id) firstBy:(NSPredicate *)predicate orderBy_vpp_:(NSString *)orderBy
 {
-    return [[self mainMOC] findBy:predicate];
+    return [[self mainMOC_vpp_] firstBy:predicate orderBy_vpp_:orderBy];
 }
 
-+ (NSArray *) allOrderBy:(NSString *)orderBy
++ (NSArray *) all_vpp_ 
 {
-    return [[self mainMOC] allOrderBy:orderBy];
+    return [[self mainMOC_vpp_] all_vpp_];
 }
 
-+ (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy
++ (NSArray *) findBy_vpp_:(NSPredicate *)predicate
 {
-    return [[self mainMOC] findBy:predicate orderBy:orderBy];
+    return [[self mainMOC_vpp_] findBy_vpp_:predicate];
 }
 
-+ (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit:(int)limit
++ (NSArray *) allOrderBy_vpp_:(NSString *)orderBy
 {
-    return [[self mainMOC] findBy:predicate orderBy:orderBy offset:offset limit:limit];
+    return [[self mainMOC_vpp_] allOrderBy_vpp_:orderBy];
 }
 
-+ (int) count
++ (NSArray *) findBy:(NSPredicate *)predicate orderBy_vpp_:(NSString *)orderBy
 {
-    return [[self mainMOC] count];
+    return [[self mainMOC_vpp_] findBy:predicate orderBy_vpp_:orderBy];
 }
 
-+ (int) countBy:(NSPredicate *)predicate
++ (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit_vpp_:(int)limit
 {
-    return [[self mainMOC] countBy:predicate];
+    return [[self mainMOC_vpp_] findBy:predicate orderBy:orderBy offset:offset limit_vpp_:limit];
 }
 
-- (void) remove 
++ (NSUInteger) count_vpp_
 {
-    [[self mainMOC] remove];
+    return [[self mainMOC_vpp_] count_vpp_];
 }
 
-+ (void) removeAll
++ (NSUInteger) countBy_vpp_:(NSPredicate *)predicate
 {
-    [[self mainMOC] removeAll];
+    return [[self mainMOC_vpp_] countBy_vpp_:predicate];
+}
+
+- (void) remove_vpp_ 
+{
+    [[self mainMOC_vpp_] remove_vpp_];
+}
+
++ (void) removeAll_vpp_
+{
+    [[self mainMOC_vpp_] removeAll_vpp_];
 }
 
 @end
