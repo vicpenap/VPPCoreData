@@ -32,12 +32,12 @@
 
 @implementation NSManagedObjectContext (VPPCoreData)
 
-- (void) saveChanges:(NSError **)error 
+- (void) saveChanges_vpp_:(NSError **)error 
 {
     [[VPPCoreData sharedInstance] saveManagedObjectContext:self error:error];
 }
 
-- (id) fetch:(id)object 
+- (id) fetch_vpp_:(id)object 
 {
     if ([object isKindOfClass:[NSArray class]]) 
     {
@@ -47,12 +47,12 @@
     return [[VPPCoreData sharedInstance] objectWithExistingID:object managedObjectContext:self];
 }
 
-+ (NSManagedObjectContext *) create 
++ (NSManagedObjectContext *) create_vpp_ 
 {
     return [[VPPCoreData sharedInstance] createManagedObjectContext];
 }
 
-+ (NSManagedObjectContext *) main
++ (NSManagedObjectContext *) main_vpp_
 {
     return [[VPPCoreData sharedInstance] mainContext];
 }

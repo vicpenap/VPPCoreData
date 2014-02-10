@@ -138,7 +138,7 @@ typedef enum {
     return [descriptors count] > 0 ? descriptors : nil;
 }
 
-+ (NSArray *) sortDescriptorsFromSQLString:(NSString *)string
++ (NSArray *) sortDescriptorsFromSQLString_vpp_:(NSString *)string
 {
     NSArray *components = [string componentsSeparatedByString:@","];
     

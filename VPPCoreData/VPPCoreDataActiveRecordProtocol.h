@@ -58,36 +58,36 @@
  
  If the object doesn't contain any required attribute, it will be automatically
  persisted. */
-- (id) create;
+- (id) create_vpp_;
 
 /** Refetches the object from the specified managed object context. */
-- (id) refetch;
+- (id) refetch_vpp_;
 
 /** Returns the first object from the caller class.
  
  @param predicate the predicate to filter with.
  @param orderBy an SQL-like order by clause. */
-- (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
+- (id) firstBy:(NSPredicate *)predicate orderBy_vpp_:(NSString *)orderBy;
 
 /** Returns all objects from the caller class. */
-- (NSArray *) all;
+- (NSArray *) all_vpp_;
 
 /** Returns all objects from the caller class.
  
  @param orderBy an SQL-like order by clause. */
-- (NSArray *) allOrderBy:(NSString *)orderBy;
+- (NSArray *) allOrderBy_vpp_:(NSString *)orderBy;
 
 /** Returns objects from the caller class. 
  
  @param predicate the predicate to filter with.
  */
-- (NSArray *) findBy:(NSPredicate *)predicate;
+- (NSArray *) findBy_vpp_:(NSPredicate *)predicate;
 
 /** Returns objects from the caller class. 
  
  @param predicate the predicate to filter with.
  @param orderBy an SQL-like order by clause. */
-- (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
+- (NSArray *) findBy:(NSPredicate *)predicate orderBy_vpp_:(NSString *)orderBy;
 
 /** Returns objects from the caller class. 
  
@@ -96,22 +96,22 @@
  @param offset the index of the first element to retrieve.
  @param limit the maximum amount of objects to retrieve.
  */
-- (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit:(int)limit;
+- (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit_vpp_:(int)limit;
 
 
 /** Returns the total amount of the objects from the caller class. */
-- (int) count;
+- (NSUInteger) count_vpp_;
 
 /** Returns the total amount of the objects from the caller class. 
  
  @param predicate the predicate to filter with. */
-- (int) countBy:(NSPredicate *)predicate; 
+- (NSUInteger) countBy_vpp_:(NSPredicate *)predicate;
 
 /** Removes the calling object. */
-- (void) remove;
+- (void) remove_vpp_;
 
 /** Removes all objects from the caller class. */
-- (void) removeAll;
+- (void) removeAll_vpp_;
 
 
 @end
@@ -134,37 +134,37 @@
  
  If the object doesn't contain any required attribute, it will be automatically
  persisted. */
-+ (id) create;
++ (id) create_vpp_;
 
 /** Refetches the object from the specified managed object context. */
-- (id) refetch;
+- (id) refetch_vpp_;
 
 /** Returns the first object from the caller class.
  
  @param predicate the predicate to filter with.
  @param orderBy an SQL-like order by clause. */
-+ (id) firstBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
++ (id) firstBy:(NSPredicate *)predicate orderBy_vpp_:(NSString *)orderBy;
 
 /** Returns all objects from the caller class. */
-+ (NSArray *) all;
++ (NSArray *) all_vpp_;
 
 /** Returns all objects from the caller class.
  
  @param orderBy an SQL-like order by clause. */
-+ (NSArray *) allOrderBy:(NSString *)orderBy;
++ (NSArray *) allOrderBy_vpp_:(NSString *)orderBy;
 
 
 /** Returns all objects from the caller class. 
  
  @param predicate the predicate to filter with.
  */
-+ (NSArray *) findBy:(NSPredicate *)predicate;
++ (NSArray *) findBy_vpp_:(NSPredicate *)predicate;
 
 /** Returns all objects from the caller class. 
  
  @param predicate the predicate to filter with.
  @param orderBy an SQL-like order by clause. */
-+ (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy;
++ (NSArray *) findBy:(NSPredicate *)predicate orderBy_vpp_:(NSString *)orderBy;
 
 /** Returns objects from the caller class. 
  
@@ -173,23 +173,23 @@
  @param offset the index of the first element to retrieve.
  @param limit the maximum amount of objects to retrieve.
  */
-+ (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit:(int)limit;
++ (NSArray *) findBy:(NSPredicate *)predicate orderBy:(NSString *)orderBy offset:(int)offset limit_vpp_:(int)limit;
 
 
 /** Returns the total amount of the objects from the caller class. */
-+ (int) count;
++ (NSUInteger) count_vpp_;
 
 /** Returns the total amount of the objects from the caller class. 
  
  @param predicate the predicate to filter with. */
-+ (int) countBy:(NSPredicate *)predicate; 
++ (NSUInteger) countBy_vpp_:(NSPredicate *)predicate; 
 
 
 /** Removes the calling object. */
-- (void) remove;
+- (void) remove_vpp_;
 
 /** Removes all objects from the caller class. */
-+ (void) removeAll;
++ (void) removeAll_vpp_;
 
 
 @end

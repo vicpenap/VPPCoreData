@@ -46,22 +46,22 @@
 /** Returns a new autoreleased managed object context, already configured with the
  persistent store coordinator and the class invoking it. This managed object context
  conforms to the protocol VPPCoreDataActiveRecordManagedObjectContext. */
-+ (NSManagedObjectContext *) moc;
++ (NSManagedObjectContext *) moc_vpp_;
 
 /** Returns the same managed object context passed as parameter, after configured it with the
  persistent store coordinator and the class invoking it. This managed object context
  conforms to the protocol VPPCoreDataActiveRecordManagedObjectContext. */
-+ (NSManagedObjectContext *) moc:(NSManagedObjectContext *)moc;
++ (NSManagedObjectContext *) moc_vpp_:(NSManagedObjectContext *)moc;
 
 /** Returns a new autoreleased managed object context, already configured with the
  persistent store coordinator and the object invoking it. This managed object context 
  conforms to the protocol VPPCoreDataActiveRecordManagedObjectContext. */
-- (NSManagedObjectContext *) moc;
+- (NSManagedObjectContext *) moc_vpp_;
 
 /** Returns the same managed object context passed as parameter, after configured it with the
  persistent store coordinator and the object invoking it. This managed object context 
  conforms to the protocol VPPCoreDataActiveRecordManagedObjectContext. */
-- (NSManagedObjectContext *) moc:(NSManagedObjectContext *)moc;
+- (NSManagedObjectContext *) moc_vpp_:(NSManagedObjectContext *)moc;
 
 
 @end
