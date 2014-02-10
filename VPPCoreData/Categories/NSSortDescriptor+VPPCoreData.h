@@ -46,6 +46,6 @@
  - date asc
  - date desc, title, id asc
  */
-+ (NSArray *) sortDescriptorsFromSQLString:(NSString *)string;
++ (NSArray *) sortDescriptorsFromSQLString_vpp_:(NSString *)string;
 
 @end

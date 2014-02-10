@@ -269,7 +269,7 @@
                        filteredBy:(NSPredicate *)predicateOrNil 
              managedObjectContext:(NSManagedObjectContext *)managedObjectContext 
 {
-    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString:orderBy];
+    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString_vpp_:orderBy];
     
     return [self objectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil fetchLimit:0 offset:0 managedObjectContext:managedObjectContext];
 }
@@ -317,7 +317,7 @@
                         offset:(int)offset
           managedObjectContext:(NSManagedObjectContext *)managedObjectContext 
 {
-    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString:orderBy];
+    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString_vpp_:orderBy];
 
     return [self objectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil fetchLimit:fetchLimit offset:offset managedObjectContext:managedObjectContext];
 }
@@ -560,7 +560,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
                     fetchLimit:(int)fetchLimit 
                         offset:(int)offset
 {
-    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString:orderBy];
+    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString_vpp_:orderBy];
     
     return [self objectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil fetchLimit:fetchLimit offset:offset managedObjectContext:self.mainContext];
 }
@@ -578,7 +578,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
                           orderBy:(NSString *)orderBy
                        filteredBy:(NSPredicate *)predicateOrNil
 {
-    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString:orderBy];
+    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString_vpp_:orderBy];
     
     return [self allObjectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil managedObjectContext:self.mainContext];
     
@@ -717,7 +717,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
                completion:(void (^) (NSArray *objects))block
 {
  
-    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString:orderBy];
+    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString_vpp_:orderBy];
     
     [self objectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil fetchLimit:fetchLimit offset:offset completion:block];
 }
@@ -746,7 +746,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(VPPCoreData);
                   completion:(void (^) (NSArray *objects))block 
 {
 
-    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString:orderBy];
+    NSArray *sortDescriptors = [NSSortDescriptor sortDescriptorsFromSQLString_vpp_:orderBy];
 
     [self allObjectsForEntity:entity sortDescriptors:sortDescriptors filteredBy:predicateOrNil completion:block];
 }

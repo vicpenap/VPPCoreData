@@ -79,7 +79,7 @@ const char objectKey_vpp_;
 
 + (NSManagedObjectContext *) moc_vpp_ 
 {
-    NSManagedObjectContext *moc = [NSManagedObjectContext create];
+    NSManagedObjectContext *moc = [NSManagedObjectContext create_vpp_];
     return [self moc_vpp_:moc];
 }
 
@@ -91,7 +91,7 @@ const char objectKey_vpp_;
 
 - (NSManagedObjectContext *) moc_vpp_ 
 {
-    NSManagedObjectContext *moc = [NSManagedObjectContext create];
+    NSManagedObjectContext *moc = [NSManagedObjectContext create_vpp_];
     return [self moc_vpp_:moc];
 }
 

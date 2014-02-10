@@ -38,19 +38,19 @@
 
 /** Saves all pending changes through `VPPCoreData`, notifying the main context
  with those changes. */
-- (void) saveChanges:(NSError **)error;
+- (void) saveChanges_vpp_:(NSError **)error;
 
 /** Obtains the given object or array of objects (or objectIDs). 
  
  This method is useful when the given objects or array of objects was
  obtained from a different managed object context. */
-- (id) fetch:(id)object;
+- (id) fetch_vpp_:(id)object;
 
 /** Returns a new autoreleased managed object context already configured with the 
  persistent store coordinator. */
-+ (NSManagedObjectContext *) create;
++ (NSManagedObjectContext *) create_vpp_;
 
 /** Returns the main managed object context. */
-+ (NSManagedObjectContext *) main;
++ (NSManagedObjectContext *) main_vpp_;
 
 @end

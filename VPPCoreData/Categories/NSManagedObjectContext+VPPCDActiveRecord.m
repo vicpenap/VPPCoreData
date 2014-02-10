@@ -68,7 +68,7 @@ extern const char objectKey_vpp_;
 
 - (id) refetch_vpp_
 {
-    return [self fetch:[self getObject_vpp_]];
+    return [self fetch_vpp_:[self getObject_vpp_]];
 }
 
 - (id) firstBy:(NSPredicate *)predicate orderBy_vpp_:(NSString *)orderBy
