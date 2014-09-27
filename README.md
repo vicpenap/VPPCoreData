@@ -44,17 +44,17 @@ You can perform calls like these:
 
 	[Quote all];
 	[Quote findBy:predicate];
-	Quote create];
+	[Quote create];
 	[aQuote remove];
 
 You can also perform those calls using different Managed Object Contexts:
 
-	[Quote moc] all]; 
+	[[Quote moc] all]; 
 	/* Will create a new Managed Object Context, configure it 
 	with the Persistent Store Coordinator and other needed information
 	and perform the query using it. */
 
-	[Quote moc:anExistingMOC] all];
+	[[Quote moc:anExistingMOC] all];
 	/* Will configure the given Managed Object Context 
 	with the Persistent Store Coordinator and other needed information
 	and perform the query using it. */
